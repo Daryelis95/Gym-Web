@@ -1,0 +1,185 @@
+@layout('layouts/main')
+
+@section('content')
+
+    @include('pages/rutinas/partials/subnavigation')
+
+    <div class="search-wrapper">
+        <div class="container">
+            <div class="search-input-contianer">
+                <div class="search-input">
+                    <input type="text" name="search" value="" placeholder="Esqurice Equal Para Buscar...">
+                    <a href="#">
+                        <span class="la la-remove"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-content">
+        <div class="container">
+
+            <div class="content-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                <div class="content-seperator mobile-0"></div>
+
+                <div class="detail-content-wrapper">
+                    <div class="detail-header">
+                        <div class="dh-column col-lx-10 col-lg-9 col-md-12 col-sm-12 col-12">
+                            <h4 class="detail-header-h4">RUTINA PERFECTO PARA A FINAR Y TONIFICAR BRAZOS</h4>
+                            <div class="detail-header-meta">22 DE FEBRERO 2019</div>
+                        </div>
+                        <div class="dh-column col-lx-2 col-lg-3 col-md-12 col-sm-12 col-12">
+                            <div class="dh-buttons">
+                                <a href="#" class="favorite-btn active">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="caledar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-slider">
+                        <!-- SL -->
+                        <div id="detail-images" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/rutina-1.jpg" class="d-block w-100"/>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/rutina-2.jpg" class="d-block w-100"/>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/rutina-3.jpg" class="d-block w-100"/>
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators">
+                                <li data-target="#detail-images" data-slide-to="0" class="active">1</li>
+                                <li data-target="#detail-images" data-slide-to="1">2</li>
+                                <li data-target="#detail-images" data-slide-to="2"><a>asdas</a></li>
+                            </ol>
+                            <a class="carousel-control-prev" href="#detail-images" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#detail-images" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        <!-- SL -->
+                    </div>
+
+                    <div class="detail-context-field detail-full-wdith-padding">
+                        <div class="context-section pdt-0">
+                            <div class="receta-labels">
+                                <div class="rl-column">
+                                    <div class="rc-icon">
+                                        <div class="lg-icon lg-icon-40x40 lg-time-big"></div>
+                                    </div>
+                                    <div class="rc-text">MAS DE 25 MIN.</div>
+                                </div>
+                                <div class="rl-column">
+                                    <div class="rc-icon">
+                                        <div class="lg-icon lg-icon-40x40 lg-receta-big"></div>
+                                    </div>
+                                    <div class="rc-text">FACIL</div>
+                                </div>
+                                <div class="rl-column">
+                                    <div class="rc-icon">
+                                        <div class="lg-icon lg-icon-40x40 lg-snack-big"></div>
+                                    </div>
+                                    <div class="rc-text">ADBOMEN</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="context-section">
+                            <div class="cs-header">
+                                <div class="line"></div>
+                                <div class="span">EXPLACACION</div>
+                            </div>
+                            <div class="cs-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <strong>incididunt ut labore et dolore magna</strong> aliqua. Ut enim ad minim veniam.</p>
+                                <p>Quis nostrud <strong>exercitation ullamco</strong> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="prev-and-next">
+                    <a href="#" class="prev">
+                        <div class="icon">
+                            <div class="lg-icon lg-icon-40x40 lg-prev"></div>
+                        </div>
+                        <span>VIDEO ANTERIOR</span>
+                    </a>
+                    <a href="#" class="next">
+                        <div class="icon">
+                            <div class="lg-icon lg-icon-40x40 lg-next"></div>
+                        </div>
+                        <span>VIDEO SIGUIENTES</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MOBILE NAV -->
+
+    <section class="mobile-navigation">
+        <div class="close-button">
+            <a href="#">
+                <span class="la la-arrow-left"></span>
+            </a>
+        </div>
+        <div class="inner-wrapper">
+
+            <div class="account-info-holder">
+                <div class="mobile-account-info">
+                    <div class="mba-picture-holder">
+                        <a href="#" class="mba-picture">
+                            <!-- <img src="" alt=""> -->
+                            <span>S.A.</span>
+                        </a>
+                    </div>
+                    <div class="mba-info-holder">
+                        <div class="name">Sabri Ayeş</div>
+                        <div class="email">sabri@qode.com</div>
+                        <a href="#" class="logout"><span class="la la-sign-out"></span>Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-holder">
+                <div class="mobile-nav">
+                    <div class="nav-element active-element">
+                        <a href="#"><span>NUTRICION</span></a>
+                    </div>
+                    <div class="nav-element">
+                        <a href="#"><span>WORKOUT</span></a>
+                    </div>
+                    <div class="nav-element">
+                        <a href="#"><span>AREA APRENDIZAJE</span></a>
+                    </div>
+                    <div class="nav-element">
+                        <a href="#"><span>COMUNIDAD</span></a>
+                    </div>
+                    <div class="nav-element last-element">
+                        <a href="#"><span>SHOP</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+@endsection

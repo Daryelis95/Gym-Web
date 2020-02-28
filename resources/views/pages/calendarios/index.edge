@@ -1,0 +1,319 @@
+@layout('layouts/main')
+
+@section('content')
+    @include('pages/calendarios/partials/subnavigation')
+
+    <!-- Calemndar Navigation -->
+    
+    <section class="calendar-navigation-wrapper">
+        <div class="container">
+            <div class="calendar-navigation">
+
+                <div class="cn-top">
+                    <div class="cn-week col-xl-3 col-lg-3 col-md-3 col-sm-4">
+                        <div class="week-label hidden-xs">SEMANA 1</div>
+                    </div>
+                    <div class="cn-month col-xl-6 col-lg-6 col-md-6 col-sm-8 col-8">
+                        <div class="cn-month-nav">
+                            <a href="#" class="prev-icon">
+                                <div class="lg-icon lg-prev"></div>
+                            </a>
+                            <div class="month-label">JUNIO</div>
+                            <a href="#" class="prev-icon">
+                                <div class="lg-icon lg-next"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cn-month-select-wrapper col-8">
+                        <div class="select-sp">
+                            <select class="cn-month-select" name="sub-menu">
+                                <option value="" disabled="disabled" selected="sselected">SELECT MONTH</option>
+                                <option value="">ENERO</option>
+                                <option value="">FEBRERO</option>
+                                <option value="">MARZO</option>
+                                <option value="">ABRIL</option>
+                                <option value="">MAYO</option>
+                                <option value="">JUNIO</option>
+                                <option value="">JULIO</option>
+                                <option value="">AGOSTO</option>
+                                <option value="">SEPTIEMBRE</option>
+                                <option value="">OCTUBRE</option>
+                                <option value="">NOVIEMBRE</option>
+                                <option value="">DICIEMBRE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cn-buttons col-xl-3 col-lg-3 col-md-3 col-sm-4 col-4">
+                        <a href="#">
+                            <div class="lg-icon lg-download-black"></div>
+                        </a>
+                        <a href="#">
+                            <div class="lg-icon lg-calendar-standart"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cn-bottom">
+                    <div class="cn-week-slider">
+                        <a href="#" class="prev-icon week-day-prev">
+                            <div class="lg-icon lg-prev"></div>
+                        </a>
+                        <div class="slider">
+                            <div class="owl-carousel owl-theme week-slider">
+                                <div class="item">
+                                    <a href="#" class="cn-week-day">
+                                        <div class="day-name">LUNES</div>
+                                        <div class="line"></div>
+                                        <div class="day-number dotted">
+                                            <div class="day-label">01</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="cn-week-day active">
+                                        <div class="day-name">MARTES</div>
+                                        <div class="line"></div>
+                                        <div class="day-number">
+                                            <div class="day-label">02</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="cn-week-day">
+                                        <div class="day-name">MIERCOLES</div>
+                                        <div class="line"></div>
+                                        <div class="day-number dotted">
+                                            <div class="day-label">03</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="cn-week-day">
+                                        <div class="day-name">JUEVES</div>
+                                        <div class="line"></div>
+                                        <div class="day-number dotted">
+                                            <div class="day-label">04</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="cn-week-day">
+                                        <div class="day-name">VIERNES</div>
+                                        <div class="line"></div>
+                                        <div class="day-number">
+                                            <div class="day-label">05</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="cn-week-day">
+                                        <div class="day-name">SABADO</div>
+                                        <div class="line"></div>
+                                        <div class="day-number">
+                                            <div class="day-label">06</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="#" class="cn-week-day">
+                                        <div class="day-name">DOMINGO</div>
+                                        <div class="line"></div>
+                                        <div class="day-number">
+                                            <div class="day-label">07</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="next-icon week-day-next">
+                            <div class="lg-icon lg-next"></div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PAGE CONTENT -->
+
+    <section class="page-content">
+        <div class="container">
+
+            <div class="content-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                <div class="content-seperator"></div>
+
+                <div class="workout-list">
+
+                    <div class="wl-row">
+                        <div class="wr-header">
+                            <div class="wr-container">
+                                <div class="wr-title">YA HAS COPLETADO ENTRENAMINETO?</div>
+                                <div class="complete-icon">
+                                    <div class="lg-icon lg-complete-white"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROW -->
+
+                    <div class="wl-row">
+                        <div class="wr-header">
+                            <div class="wr-container">
+                                <div class="wr-title">CALENTAMIENTO</div>
+                            </div>
+                        </div>
+
+                        <!-- BODY -->
+
+                        <div class="wr-body">
+                            <div class="wr-container">
+                                <div class="wr-content">
+                                    <img src="img/play-1.png"/>
+                                    <div class="inner-content">
+                                        <a href="#">2. ELIMINAR GRASA DE LA ESPALDA</a>
+                                        <ul>
+                                            <li>
+                                                <div class="meta-li">
+                                                    <div class="meta-title">TIEMPO</div>
+                                                    <div class="meta-text">MAS DE 25 MIN</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="meta-li">
+                                                    <div class="meta-title">DIFICULTED</div>
+                                                    <div class="meta-text">NIVEL 2</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="meta-li">
+                                                    <div class="meta-title">RELIZADOS</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="wr-buttons">
+                                        <a href="#">EMPEZAR</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="favorite-icon">
+                                <div class="lg-icon lg-heart-black"></div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- ROW -->
+
+                    <!-- ROW -->
+
+                    <div class="wl-row">
+                        <div class="wr-header">
+                            <div class="wr-container">
+                                <div class="wr-title">ESTIRAMIENTOS</div>
+                            </div>
+                        </div>
+
+                        <!-- BODY -->
+
+                        <div class="wr-body">
+                            <div class="wr-container">
+                                <div class="wr-content">
+                                    <img src="img/play-1.png"/>
+                                    <div class="inner-content">
+                                        <a href="#">2. ELIMINAR GRASA DE LA ESPALDA</a>
+                                        <ul>
+                                            <li>
+                                                <div class="meta-li">
+                                                    <div class="meta-title">TIEMPO</div>
+                                                    <div class="meta-text">MAS DE 25 MIN</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="meta-li">
+                                                    <div class="meta-title">DIFICULTED</div>
+                                                    <div class="meta-text">NIVEL 2</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="meta-li">
+                                                    <div class="meta-title">RELIZADOS</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="wr-buttons">
+                                        <a href="#">EMPEZAR</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="favorite-icon">
+                                <div class="lg-icon lg-heart-black"></div>
+                            </a>
+                        </div>
+
+                        <!-- BODY -->
+
+                        <div class="wr-body">
+                            <div class="wr-container">
+                                <div class="wr-content">
+                                    <img src="img/play-1.png"/>
+                                    <div class="inner-content">
+                                        <a href="#">2. ELIMINAR GRASA DE LA ESPALDA</a>
+                                        <ul>
+                                            <li>
+                                                <div class="meta-li">
+                                                    <div class="meta-title">TIEMPO</div>
+                                                    <div class="meta-text">MAS DE 25 MIN</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="meta-li">
+                                                    <div class="meta-title">DIFICULTED</div>
+                                                    <div class="meta-text">NIVEL 2</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="meta-li">
+                                                    <div class="meta-title">RELIZADOS</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="wr-buttons">
+                                        <a href="#">EMPEZAR</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="favorite-icon">
+                                <div class="lg-icon lg-heart-black"></div>
+                            </a>
+                        </div>
+
+                        <!-- BODY -->
+
+                    </div>
+
+                    <!-- ROW -->
+
+                    <a href="#" class="row-button" data-toggle="modal" data-target="#reliaze-modal">
+                        <div class="btn-container">
+                            <div class="rbtn-text">ANADIR MAS EJERCICIOS</div>
+                            <div class="rbtn-icon">
+                                <div class="lg-icon lg-calendar-add"></div>
+                            </div>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+@endsection

@@ -1,0 +1,25 @@
+<div class="modal fade" id="edit-clear-menu-modal" tabindex="-1" role="dialog" aria-labelledby="edit-clear-menu-modal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form name="add-form" action="{{ route('nutricions.crearmenu.calendar', { menu_id: params.menu_id, day: params.day }) }}" method="post" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="edit-clear-menu-modal">EDIT MENU</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="la la-remove"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="realize-form">
+                    <div class="rf-textarea">
+                        <div class="header">SEMANA NAME</div>
+                        <input type="text" name="title" value="{{ menu.title }}" class="txt-align-center" placeholder="SEMANA NAME">
+                    </div>
+                </div>
+                <input type="hidden" name="proccess" value="edit-menu"/>
+            </div>
+            <div class="modal-footer">
+                {{ csrfField() }}
+                <button type="submit" class="btn btn-primary">GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>

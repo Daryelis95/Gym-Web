@@ -1,0 +1,104 @@
+@layout('layouts/main')
+
+@section('content')
+
+    @include('pages/recetas/partials/subnavigation')
+
+    <section class="page-content">
+        <div class="container">
+
+            @if(!auth.user)
+            <div class="content-wrapper col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
+            @else
+            <div class="content-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            @endif
+
+                <div class="content-seperator"></div>
+
+                @if(!auth.user)
+                <div class="content-grid-item-wrapper col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                @else
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                @endif
+                    <div class="clear-menu-item">
+                        <a href="#" class="image-holder" data-toggle="modal" data-target="#add-clear-menu-modal">
+                            <img src="{{ assetsUrl('img/clear-menu-create.png') }}" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4" data-toggle="modal" data-target="#add-clear-menu-modal">CREATE TU NEUVE PLAN DE ALIMENTACION <span class="la la-plus"></span></a>
+                        </div>
+                    </div>
+                </div>
+
+                @each(content in contents.data)
+
+                @if(!auth.user)
+                <div class="content-grid-item-wrapper col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                @else
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                @endif
+                    <div class="clear-menu-item">
+                        <a href="{{ route('nutricions.crearmenu.detail', { menu_id: content._id, day: 1 }) }}" class="image-holder">
+                            <img src="{{ assetsUrl('img/clear-menu-bg.png') }}" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="{{ route('nutricions.crearmenu.detail', { menu_id: content._id, day: 1 }) }}" class="h4">{{ content.title }}</a>
+                        </div>
+                    </div>
+                </div>
+                @endeach
+
+                <!-- PAGI -->
+
+                <div class="pagination-select-wrapper">
+                    <h4>PAGE</h4>
+                    <div class="select-sp">
+                        <select class="pagination-select" name="sub-menu">
+                            <option value="">PAGE 1</option>
+                            <option value="">PAGE 2</option>
+                            <option value="">PAGE 3</option>
+                            <option value="">PAGE 4</option>
+                            <option value="">PAGE 5</option>
+                            <option value="">PAGE 6</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pagination-wrapper">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link active" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">5</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">6</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+            @if(!auth.user)
+                @include('partials/asidebar')
+            @endif
+
+        </div>
+
+    </section>
+
+    @include('pages/personaliza/clearmenu/partials/add-form')
+
+@endsection

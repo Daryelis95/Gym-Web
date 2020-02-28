@@ -1,0 +1,44 @@
+
+<!-- Page Top Navigation -->
+
+<div class="page-top-navigation">
+
+        <div class="pagination-container">
+            <a href="{{ getPrevPageURL(learnings) }}" class="prev-page">
+                <span class="fa fa-arrow-left"></span>
+            </a>
+            <input type="text" name="current-page" value="{{ learnings.page }}">
+            <a href="{{ getNextPageURL(learnings) }}" class="next-page">
+                <span class="fa fa-arrow-right"></span>
+            </a>
+        </div>
+    
+        <div class="button-container">
+            @if(edit)
+            <a href="{{ route('cms.learning.blog') + '?modal=true' }}" class="add-button">
+                <span>Add Category</span>
+                <span class="fa fa-plus"></span>
+            </a>
+            @endif
+    
+            @if(!edit)
+            <a href="#" class="add-button" data-toggle="modal" data-target="#content-form-modal">
+                <span>Add Category</span>
+                <span class="fa fa-plus"></span>
+            </a>
+            @endif
+    
+            <a href="#">
+                <span>Sort</span>
+                <span class="fa fa-sort"></span>
+            </a>
+    
+        </div>
+    
+        <form action="{{ route('cms.learning.blog') }}" method="get" name="search-form" class="search-container" id="search-form">
+            <input type="text" value="{{ request.input('keyword','') }}" id="keyword" name="keyword" placeholder="Keyword..."/>
+        </form>
+    
+    </div>
+    
+    <!-- E:Page Top Navigation -->

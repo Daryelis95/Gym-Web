@@ -1,0 +1,233 @@
+
+<!-- Form -->
+
+<div class="modal fade" id="content-form-modal" tabindex="-1" role="dialog" aria-labelledby="content-form-modal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title tipo-letra">{{ edit ? 'Edit menu  : ' + edit.title : 'AÑADIR MENÚ' }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <h6 class="tipo-letra">CAMPOS PERSONALIZADOS DEL <strong>PLAN NUTRICÍON</strong> GENERAL</h6>
+    
+                    <form  method="post" action="{{ route('cms.nutricions.crearmenu.create') }}" enctype="multipart/form-data" name="f1" id="f1">
+                      <div class="modal-body">
+                         <div class="modal-body-section">
+                        
+                            <div class="form-group panel-form-group">
+                                <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                    <label for="title">Titulo para menú</label>
+                                </div>
+                                <div class="form-col col-lg-8 col-md-8 col-sm-8 col-xs-8 {{ hasErrorFor('title') ? 'alerted-control' : '' }}">
+                                    <input type="text" name="title" value="{{ old('title', edit.title) }}" placeholder="" required maxlength="255"  />
+    
+                                    @if(hasErrorFor('title'))
+                                    <div class="control-alert">
+                                        <span class="fa fa-times"></span>
+                                        <span>{{ getErrorFor('title') }}</span>
+                                    </div>
+                                    @endif
+                                </div>
+    
+                                <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <label for="descripcion">Descripcion</label>
+                                </div>
+
+                                <div class="form-col col-lg-8 col-md-8 col-sm-8 col-xs-8 {{ hasErrorFor('descripcion') ? 'alerted-control' : '' }}">
+                                    <textarea name="descripcion" id="f1" cols="50" rows="10" value="{{ old('descripcion', edit.descripcion) }}"></textarea>
+            
+    
+                                     @if(hasErrorFor('descripcion'))
+                                     <div class="control-alert">
+                                        <span class="fa fa-times"></span>
+                                        <span>{{ getErrorFor('descripcion') }}</span>
+                                    </div>
+                                     @endif
+                                </div>
+    
+                            </div>
+                           
+                            <div class="form-group panel-form-group">
+
+                                <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                     <label for="file">Añadir Archivo
+                                        @if(edit.image)
+                                        <a href="{{ assetsUrl('uploads/' + edit.image) }}" target="_blank" class="badge badge-secondary">Download</a>
+                                        @endif
+                                    </label>
+                                </div>
+
+                                <div class="form-col col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                     <div class="file-upload-box">
+                                        <div class="file-status">
+                                            <span class="fa fa-upload"></span>
+                                        </div>
+                                        <div class="file-content">
+                                            <span class="file-name">Seleccionar Archivo</span>
+                                        </div>
+                                            
+                                        <input type="file" name="file" accept="image/*" data-field="title"/>
+                                            <a class="file-clear">
+                                            <span class="fa fa-times"></span>
+                                            </a>
+                                     </div>
+                        
+                                         @if(hasErrorFor('file'))
+                                         <div class="control-alert">
+                                            <span class="fa fa-times"></span>
+                                             <span>{{ getErrorFor('file') }}</span>
+                                         </div>
+                                         @endif
+                                </div>
+
+                            </div>
+
+                            <div class="form-group panel-form-group">
+                               
+                                <div class="form-col col-lg-12 col-md-12col-sm-12 col-xs-12">
+                                    
+                                    <div class="semana-day">
+                                        <select id="semana" name="semana" size="5">
+                                            <option value="1" class="semana">SEMANA 1</option>
+                                            <option value="2" class="semana">SEMANA 2</option>
+                                            <option value="3" class="semana">SEMANA 3</option>
+                                            <option value="4" class="semana">SEMANA 4</option>
+                                        </select>
+                                        
+                                    </div>
+                                    <div  class="plus">
+                                        <h6>AÑADIR <span class="fa fa-plus"></span></h6> 
+                                    </div>
+                                </div>
+
+                                
+                                <div class="form-col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="day">
+                                        <select id="dia" name="dia" size="8">
+                                            <option value="LUNES" class="dia">LUNES</option>
+                                            <option value="MARTES" class="dia">MARTES</option>
+                                            <option value="MIERCOLES" class="dia">MIERCOLES</option>
+                                            <option value="JUEVES" class="dia">JUEVES</option>
+                                            <option value="VIERNES" class="dia">VIERNES</option>
+                                            <option value="SABADO" class="dia">SABADO</option>
+                                            <option value="DOMINGO" class="dia">DOMINGO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                               
+                                   
+                            </div>
+
+                            <div class="form-group panel-form-group">
+                                <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                    <label for="desayuno">Desayuno</label>
+                                </div>
+                                    
+                                <div class="form-col col-lg-8 col-md-8 col-sm-8 col-xs-8 {{ hasErrorFor('desayuno') ? 'alerted-control' : '' }}">
+                                    <input type="text" name="desayuno" value="{{ old('desayuno', edit.desayuno) }}" placeholder="" required maxlength="255"  />
+                
+                                    @if(hasErrorFor('desayuno'))
+                                    <div class="control-alert">
+                                        <span class="fa fa-times"></span>
+                                        <span>{{ getErrorFor('desayuno') }}</span>
+                                    </div>
+                                    @endif
+                                </div>
+                                
+                                <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                    <label for="mediamanana">Media Mañana</label>
+                                </div>
+                                <div class="form-col col-lg-8 col-md-8 col-sm-8 col-xs-8 {{ hasErrorFor('mediamanana') ? 'alerted-control' : '' }}">
+                                    <input type="text" name="mediamanana" value="{{ old('mediamanana', edit.mediamanana) }}" placeholder="" required maxlength="255"  />
+                        
+                                    @if(hasErrorFor('mediamanana'))
+                                        <div class="control-alert">
+                                            <span class="fa fa-times"></span>
+                                            <span>{{ getErrorFor('mediamanana') }}</span>
+                                        </div>
+                                    @endif
+                                </div>
+                                 
+                                <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                    <label for="comida">Comida</label>
+                                </div>
+                                <div class="form-col col-lg-8 col-md-8 col-sm-8 col-xs-8 {{ hasErrorFor('comida') ? 'alerted-control' : '' }}">
+                                            <input type="text" name="comida" value="{{ old('comida', edit.comida) }}" placeholder="" required maxlength="255"  />
+                               
+                                    @if(hasErrorFor('comida'))
+                                    <div class="control-alert">
+                                        <span class="fa fa-times"></span>
+                                        <span>{{ getErrorFor('comida') }}</span>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div> 
+
+                            <div class="form-group panel-form-group">
+                                   
+                                <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                    <label for="mediatarde">Media Tarde</label>
+                                </div>
+                                        
+                                <div class="form-col col-lg-8 col-md-8 col-sm-8 col-xs-8 {{ hasErrorFor('mediatarde') ? 'alerted-control' : '' }}">
+                                    <input type="text" name="mediatarde" value="{{ old('mediatarde', edit.mediatarde) }}" placeholder="" required maxlength="255"  />
+                    
+                                    @if(hasErrorFor('desayuno'))
+                                    <div class="control-alert">
+                                         <span class="fa fa-times"></span>
+                                         <span>{{ getErrorFor('desayuno') }}</span>
+                                    </div>
+                                    @endif
+                                </div>
+                                
+                                <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                                    <label for="cena">Cena</label>
+                                </div>
+                                <div class="form-col col-lg-8 col-md-8 col-sm-8 col-xs-8 {{ hasErrorFor('cena') ? 'alerted-control' : '' }}">
+                                    <input type="text" name="cena" value="{{ old('cena', edit.cena) }}" placeholder="" required maxlength="255"  />
+                            
+                                    @if(hasErrorFor('cena'))
+                                    <div class="control-alert">
+                                        <span class="fa fa-times"></span>
+                                        <span>{{ getErrorFor('cena') }}</span>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                                {{ csrfField() }}
+                                @if(edit)
+                                    <input type="hidden" name="id" value="{{ edit._id }}"/>
+                                @endif
+                            
+                         </div>
+                      </div>
+                      <div class="modal-footer">
+                        @if(!edit)
+                            <button type="submit" for="content-form" class="btn btn-primary float-right"><span class="fa fa-save"></span> Add Menu</button>
+                        @else
+                            <button type="submit" for="content-form" class="btn btn-primary float-right"><span class="fa fa-edit"></span> Edit Menu</button>
+                           
+                        @endif
+                      </div> 
+                    </form>
+            </div>
+        </div>
+</div>
+    
+    @if(flashMessage('form') || edit || request.input('modal'))
+    <script>
+    
+        $(document).ready(function() {
+            $('#content-form-modal').modal('show');
+        });
+    
+    </script>
+    <script type = "text/JavaScript" src = "https://MomentJS.com/downloads/moment.js"></script>
+
+ @endif
+    
+    <!-- E:Form -->
+    

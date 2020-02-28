@@ -1,0 +1,12 @@
+<div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 content-title-menu">
+        @if(edit)
+        <a href="{{ route('nutricions.createMenu') + '?modal=true' }}" data-dismiss="modal" class="add-button">
+            <button class="menu-titulos" ><strong>AÑADIR RECETA</strong></button>
+          </a>
+        @endif
+        @if(!edit)
+            <a href="#" data-dismiss="modal" class="add-button" data-toggle="modal" data-target="#menu-personal-modal">
+                <button class="menu-titulos" ><strong>AÑADIR RECETA</strong></button>
+            </a>
+        @endif
+</div>

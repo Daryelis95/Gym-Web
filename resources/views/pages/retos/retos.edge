@@ -1,0 +1,87 @@
+@layout('layouts/main')
+
+@section('content')
+
+    @include('pages/retos/partials/subnavigation')
+    @include('pages/retos/partials/actionbar')
+
+    <section class="page-content">
+        <div class="container">
+
+            <div class="content-wrapper col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
+
+                <div class="content-seperator"></div>
+
+                @each(item in items)
+
+                <div class="content-grid-item-wrapper col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <img src="img/reto-1.png" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">RETO GANAR FLEXIBILIDAD</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @endeach
+
+                <!-- PAGI -->
+
+                <div class="pagination-select-wrapper">
+                    <h4>PAGE</h4>
+                    <div class="select-sp">
+                        <select class="pagination-select" name="sub-menu">
+                            <option value="">PAGE 1</option>
+                            <option value="">PAGE 2</option>
+                            <option value="">PAGE 3</option>
+                            <option value="">PAGE 4</option>
+                            <option value="">PAGE 5</option>
+                            <option value="">PAGE 6</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pagination-wrapper">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link active" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">5</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">6</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+            @include('partials/asidebar')
+
+        </div>
+
+    </section>
+
+@endsection

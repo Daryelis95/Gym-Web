@@ -1,0 +1,53 @@
+<div class="modal fade" id="content-form-modal" tabindex="-1" role="dialog" aria-labelledby="content-form-modal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form name="add-form" action="{{ route('cms.nutricions.crearmenu.create') }}" method="post" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="add-clear-menu-modal">AÑADIR TITULO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="la la-remove"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="realize-form">
+                    <div class="rf-textarea {{ hasErrorFor('semana') ? 'alerted-control' : '' }}">
+                        <label for="title" class="header"><strong>NOMBRA</strong> TU PLAN DE COMIDAS</label>
+                        <input type="text" name="title" value="{{ old('title', edit.title) }}" class="txt-align-center" placeholder="Title" required maxlength="255"  />
+                       
+                    </div>
+                    @if(hasErrorFor('title'))
+                        <div class="control-alert">
+                            <span class="fa fa-times"></span>
+                            <span>{{ getErrorFor('title') }}</span>
+                        </div>
+                    @endif
+                </div>
+                {{ csrfField() }}
+                    @if(edit)
+                        <input type="hidden" name="id" value="{{ edit._id }}"/>
+                    @endif
+
+                   @each(menu in menus.data)
+                    <input type="text" name="id" value="{{ menu._id}}"/>
+                   @endeach
+            </div>
+            <div class="modal-footer">
+                
+                @if(!edit)
+                      <button type="submit" for="content-form" class="btn btn-primary float-right"><span class="fa fa-save"></span> Guardar</button>
+                  @else
+                      <button type="submit" for="content-form" class="btn btn-primary float-right"><span class="fa fa-edit"></span> Edit Menu</button>
+                     
+                  @endif
+            </div>
+        </form>
+    </div>
+</div>
+@if(flashMessage('form') || edit || request.input('modal'))
+<script>
+
+    $(document).ready(function() {
+        $('#content-form-modal').modal('show');
+    });
+
+</script>
+@endif

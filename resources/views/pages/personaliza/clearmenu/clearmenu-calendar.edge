@@ -1,0 +1,196 @@
+@layout('layouts/main')
+
+@section('content')
+
+    @include('pages/recetas/partials/subnavigation')
+
+    <section class="calendar-navigation-wrapper">
+        <div class="container">
+            <div class="calendar-navigation">
+
+                <div class="cn-top">
+                    <div class="cn-week col-xl-3 col-lg-3 col-md-3 col-sm-4">
+                        <a href="#" class="week-label hidden-xs">{{ menu.title }}</a>
+                    </div>
+                    <div class="cn-month col-xl-6 col-lg-6 col-md-6 col-sm-7 col-6">
+                        <div class="cn-month-nav">
+                            <div class="month-label-clear">TITULO DE PLAN</div>
+                        </div>
+                    </div>
+                    <div class="cn-buttons col-xl-3 col-lg-3 col-md-3 col-sm-5 col-6">
+                        <a href="#">
+                            <div class="lg-icon lg-cloud-download-black"></div>
+                        </a>
+                        <a href="#" data-toggle="modal" data-target="#edit-clear-menu-modal">
+                            <div class="lg-icon lg-pen-black"></div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+
+            <div class="semana-grid">
+                <div class="semana-days">
+                    <div class="sr-box">
+                        <div class="day">
+                            <span>LUNES</span>
+                        </div>
+                        <div class="count">
+                            <span>01</span>
+                        </div>
+                    </div>
+                    <div class="sr-box">
+                        <div class="day">
+                            <span>MARTES</span>
+                        </div>
+                        <div class="count">
+                            <span>02</span>
+                        </div>
+                    </div>
+                    <div class="sr-box">
+                        <div class="day">
+                            <span>MERCOLES</span>
+                        </div>
+                        <div class="count">
+                            <span>03</span>
+                        </div>
+                    </div>
+                    <div class="sr-box">
+                        <div class="day">
+                            <span>JUEVES</span>
+                        </div>
+                        <div class="count">
+                            <span>04</span>
+                        </div>
+                    </div>
+                    <div class="sr-box">
+                        <div class="day">
+                            <span>VIERNES</span>
+                        </div>
+                        <div class="count">
+                            <span>05</span>
+                        </div>
+                    </div>
+                    <div class="sr-box">
+                        <div class="day">
+                            <span>SABADO</span>
+                        </div>
+                        <div class="count">
+                            <span>06</span>
+                        </div>
+                    </div>
+                    <div class="sr-box">
+                        <div class="day">
+                            <span>DOMINGO</span>
+                        </div>
+                        <div class="count">
+                            <span>07</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="semana-boxes">
+                    @each(row in rows)
+                    <div class="semana-row">
+                        <div class="sr-label">
+                            <span>{{ row.title }}</span>
+                        </div>
+                        <div class="sr-box">
+                            @if(!meals['1'][row.id])
+                            <a href="#" class="sr-add {{ row.id == 'desayuno' ? 'show' : '' }} add-receta-calendar" data-meal="{{ row.id }}" data-day="1">
+                                <span>ANA DE TU RECETA <span class="la la-plus"></span></span>
+                            </a>
+                            @endif
+                            @if(meals['1'][row.id])
+                            <div class="sr-content">
+                                <div>{{ meals['1'][row.id].receta.title }}</div>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="sr-box">
+                            @if(!meals['2'][row.id])
+                            <a href="#" class="sr-add add-receta-calendar" data-meal="{{ row.id }}" data-day="2">
+                                <span>ANA DE TU RECETA <span class="la la-plus"></span></span>
+                            </a>
+                            @endif
+                            @if(meals['2'][row.id])
+                            <div class="sr-content">
+                                <div>{{ meals['2'][row.id].receta.title }}</div>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="sr-box">
+                            @if(!meals['3'][row.id])
+                            <a href="#" class="sr-add add-receta-calendar" data-meal="{{ row.id }}" data-day="3">
+                                <span>ANA DE TU RECETA <span class="la la-plus"></span></span>
+                            </a>
+                            @endif
+                            @if(meals['3'][row.id])
+                            <div class="sr-content">
+                                <div>{{ meals['3'][row.id].receta.title }}</div>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="sr-box">
+                            @if(!meals['4'][row.id])
+                            <a href="#" class="sr-add add-receta-calendar" data-meal="{{ row.id }}" data-day="4">
+                                <span>ANA DE TU RECETA <span class="la la-plus"></span></span>
+                            </a>
+                            @endif
+                            @if(meals['4'][row.id])
+                            <div class="sr-content">
+                                <div>{{ meals['4'][row.id].receta.title }}</div>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="sr-box">
+                            @if(!meals['5'][row.id])
+                            <a href="#" class="sr-add add-receta-calendar" data-meal="{{ row.id }}" data-day="5">
+                                <span>ANA DE TU RECETA <span class="la la-plus"></span></span>
+                            </a>
+                            @endif
+                            @if(meals['5'][row.id])
+                            <div class="sr-content">
+                                <div>{{ meals['5'][row.id].receta.title }}</div>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="sr-box">
+                            @if(!meals['6'][row.id])
+                            <a href="#" class="sr-add add-receta-calendar" data-meal="{{ row.id }}" data-day="6">
+                                <span>ANA DE TU RECETA <span class="la la-plus"></span></span>
+                            </a>
+                            @endif
+                            @if(meals['6'][row.id])
+                            <div class="sr-content">
+                                <div>{{ meals['6'][row.id].receta.title }}</div>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="sr-box">
+                            @if(!meals['7'][row.id])
+                            <a href="#" class="sr-add add-receta-calendar" data-meal="{{ row.id }}" data-day="7">
+                                <span>ANA DE TU RECETA <span class="la la-plus"></span></span>
+                            </a>
+                            @endif
+                            @if(meals['7'][row.id])
+                            <div class="sr-content">
+                                <div>{{ meals['7'][row.id].receta.title }}</div>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    @endeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @include('pages/personaliza/clearmenu/partials/add-receta-calendar')
+    @include('pages/personaliza/clearmenu/partials/edit-calendar-form')
+
+@endsection

@@ -1,0 +1,121 @@
+<!-- Main Header Partial -->
+
+<header class="">
+    <div class="container">
+        <div class="navigation-wrapper">
+
+            <div class="main-navigation py-4">
+                <div class="logo-wrapper col-xl-2 col-lg-3 col-md-5 col-sm-4 col-6">
+                    <a href="#" class="main-logo">
+                        <img src="img/logo.png"/>
+                    </a>
+                </div>
+                <div class="navigation-container col-xl-10 col-lg-9 col-md-7 col-sm-8 col-6">
+                    <nav class="desktop-navigation">
+                        <div class="nav-element {{ isActiveRoute('/nutricions/*') }}">
+                            <a href="{{ route('nutricions.index') }}"><span>NUTRICIONS</span></a>
+                        </div>
+                        <div class="nav-element {{ isActiveRoute('/workout/*') }}">
+                            <a href="#"><span>WORKOUT</span></a>
+                        </div>
+                        <div class="nav-element {{ isActiveRoute('/aprendizajes/*') }}">
+                            <a href="{{route ('aprendizajes.index')}}"><span>AREA APRENDIZAJE</span></a>
+                        </div>
+                        <div class="nav-element {{ isActiveRoute('/learning/*') }}">
+                            <a href="{{route ('learning.index')}}"><span>LEARNING</span></a>
+                        </div>
+                        <div class="nav-element {{ isActiveRoute('/comunidad/*') }}">
+                            <a href="#"><span>COMUNIDAD</span></a>
+                        </div>
+
+                       
+
+
+                        <!-- SPEC -->
+                        <div class="special-nav-element hiddenable">
+                            <a href="#" data-toggle="dropdown">
+                                <div class="icon-holder">                            
+                                    @loggedIn
+
+                                        <img class="lg-icon" src="img/profile-user.jpg" alt="">
+                                        
+                                    @else
+
+                                        <div class="lg-icon lg-header-user"></div>
+
+                                    @endloggedIn
+                                </div>
+                                <div class="text">
+                                    <span>LOGIN</span>
+                                </div>
+                            </a>
+                            @loggedIn
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="{{ route('perfil') }}">
+                                        <span class="la la-user"></span>
+                                        <span>Edit Profile</span>
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('out') }}">
+                                        <span class="la la-arrow-left"></span>
+                                        <span>Signout</span>
+                                    </a>
+                                </div>
+
+                            @else
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="{{ route('login') }}">
+                                        <span class="la la-lock"></span>
+                                        <span>Sign In</span>
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('register') }}">
+                                        <span class="la la-user"></span>
+                                        <span>Sign Up</span>
+                                    </a>
+                                </div>
+                                         
+                            @endloggedIn
+                        </div>
+                        <div class="special-nav-element hiddenable">
+                            <a href="#">
+                                <div class="icon-holder">
+                                    <div class="lg-icon lg-shopping-cart"></div>
+                                </div>
+                                <div class="text">
+                                    <span>CART</span>
+                                </div>
+                                <div class="badge-holder">
+                                    <span>4</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="special-nav-element desktop-nav-switch">
+                            <a href="#">
+                                <div class="icon-holder">
+                                    <div class="lg-icon lg-nav"></div>
+                                </div>
+                                <div class="text">
+                                    <span>NAVIGATION</span>
+                                </div>
+                            </a>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+@if(hidden)
+@else
+    <section class="header-image">
+        <div class="container">
+            <img class="image" src="{{ headerImage ? headerImage : 'img/header-image.png' }}" />
+        </div>
+    </section>
+@endif
+
+<!-- E:Main Header Partial -->

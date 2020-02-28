@@ -1,0 +1,498 @@
+@layout('layouts/main')
+@section('content')
+  @include('pages/test/partials/subnavigation')
+  @include('pages/test/partials/actionbar')
+    <section class="page-content">
+        @include('pages/test/calendar')
+    </section>
+
+    <section class="page-content secondary-bg">
+        <div class="container">
+
+            <div class="clear-menu-rows col-xl-10 offset-xl-1 col-lg-10 offeset-lg-1 col-md-10 offset-md-1 col-sm-12 col-xs-12">
+                <!--DESAYUNO-->
+                <div class="cmr-element flip" id="flip">
+                   
+                    <div class="inner-container" >
+                        <div class="icon-holder">
+                            <img src="{{ assetsUrl('img/icons/clear-menu-icon-1.png') }}" alt="">
+                        </div>
+                        <div class="name-holder">
+                            <span>DESAYUNO</span>
+                        </div>
+                       
+                        <div class="dropdown dropright">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="lg-icon lg-calendar-add"></div>
+                            </button>
+
+                            <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#add-menu-modal">
+                                    AÑADIR OTRA RECETA
+                                </a>
+                              
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#menu-personal-modal">
+                                    PERSONALIZAR RECETA
+                                </a>
+                             
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">RECETEAR</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="content-container panel" id="panel">
+                    <div class="row panel-grup">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <div class="row ">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <img src="{{ assetsUrl('img/nut-2.png') }}" alt="..." class="img-thumbnail img-detail">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <h4 class="title-detail">TOSTADA CON HUEVO POCHADO, ESPINACAS Y TOMATES CHERRY</h4>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>INGREDIENTES</h5>
+                            <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span> Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                             <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span>  Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>PREPARACION</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">1.</span> 
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate obcaecati fugiat dolores ullam nam qui consequatur impedit vel vero. Nulla odio alias quasi voluptatibus eius. Inventore architecto saepe corporis eius.</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">2.</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt laborum repellendus cupiditate nobis. Facere explicabo deleniti nulla earum aperiam illo, sit, corrupti quo voluptatum nostrum rem doloribus, aut ea cupiditate.</p>
+                                    
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">3.</span>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi quibusdam quidem excepturi similique deserunt earum numquam id magnam, dolorum dolore quam sequi quod facilis voluptate eius hic facere? Debitis, veritatis.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary btn-group-sm boton-opciones">OPCIONES DE CAMBIO</button>
+                    </div>
+                </div>
+                
+                 <!--MEDIA MANANA-->
+                <div class="cmr-element flip" id="flip3">
+                    
+                    <div class="inner-container">
+                        <div class="icon-holder">
+                            <img src="{{ assetsUrl('img/icons/clear-menu-icon-2.png') }}" alt="">
+                        </div>
+                        <div class="name-holder">
+                            <span>MEDIA MANANA</span>
+                        </div>
+                        <div class="dropdown dropright">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="lg-icon lg-calendar-add"></div>
+                            </button>
+
+                            <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#add-menu-modal">
+                                    AÑADIR OTRA RECETA
+                                </a>
+                              
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#menu-personal-modal">
+                                    PERSONALIZAR RECETA
+                                </a>
+                             
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">RECETEAR</a>
+                            </div>
+
+                        </div>
+                    </div>   
+                </div>
+
+                <div class="content-container panel" id="panel3">
+                    <div class="row panel-grup">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <img src="{{ assetsUrl('img/receta-1.png') }}" alt="..." class="img-thumbnail img-detail">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <h4 class="title-detail">TOSTADA CON HUEVO POCHADO, ESPINACAS Y TOMATES CHERRY</h4>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>INGREDIENTES</h5>
+                            <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span> Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                             <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span>  Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>PREPARACION</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">1.</span> 
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate obcaecati fugiat dolores ullam nam qui consequatur impedit vel vero. Nulla odio alias quasi voluptatibus eius. Inventore architecto saepe corporis eius.</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">2.</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt laborum repellendus cupiditate nobis. Facere explicabo deleniti nulla earum aperiam illo, sit, corrupti quo voluptatum nostrum rem doloribus, aut ea cupiditate.</p>
+                                    
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">3.</span>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi quibusdam quidem excepturi similique deserunt earum numquam id magnam, dolorum dolore quam sequi quod facilis voluptate eius hic facere? Debitis, veritatis.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary btn-group-sm boton-opciones">OPCIONES DE CAMBIO</button>
+                    </div>
+                </div>
+
+              <!--ALMUERZO-->
+                <div class="cmr-element flip" id="flip4">
+                    @if(!meals.almuerzo)
+                    <div class="inner-container">
+                        <div class="icon-holder">
+                            <img src="{{ assetsUrl('img/icons/clear-menu-icon-3.png') }}" alt="">
+                        </div>
+                        <div class="name-holder">
+                            <span>AL MUERZO</span>
+                        </div>
+                        <div class="dropdown dropright">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="lg-icon lg-calendar-add"></div>
+                            </button>
+
+                            <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#add-menu-modal">
+                                    AÑADIR OTRA RECETA
+                                </a>
+                              
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#menu-personal-modal">
+                                    PERSONALIZAR RECETA
+                                </a>
+                             
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">RECETEAR</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    @endif
+                    @if(meals.almuerzo)
+                    <div class="content-title">
+                        <span>AL MUERZO</span>
+                    </div>
+                    <div class="content-container">
+                        <div class="image-holder">
+                            <img src="{{ assetsUrl('uploads/' + meals.almuerzo.receta.image) }}" alt="">
+                        </div>
+                        <div class="content-holder">
+                            <span>{{ meals.almuerzo.receta.title }}</span>
+                        </div>
+                        <div class="button-holder">
+                            <div class="dropdown dropleft">
+                                <a href="#" data-toggle="dropdown">
+                                    <div class="lg-icon lg-settings"></div>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item update-receta"  href="#" data-meal="almuerzo" data-content-id="{{ meals.almuerzo._id }}" data-receta-id="{{ meals.almuerzo.receta._id }}">CAMBIAR RECETA</a>
+                                    <a class="dropdown-item" href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: params.day }) }}?delete={{  meals.almuerzo._id }}">EUMINAR RECETA</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+                <div class="content-container panel" id="panel4">
+                    <div class="row panel-grup">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <img src="{{ assetsUrl('img/cg-2.png') }}" alt="..." class="img-thumbnail img-detail">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <h4 class="title-detail">TOSTADA CON HUEVO POCHADO, ESPINACAS Y TOMATES CHERRY</h4>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>INGREDIENTES</h5>
+                            <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span> Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                             <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span>  Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>PREPARACION</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">1.</span> 
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate obcaecati fugiat dolores ullam nam qui consequatur impedit vel vero. Nulla odio alias quasi voluptatibus eius. Inventore architecto saepe corporis eius.</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">2.</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt laborum repellendus cupiditate nobis. Facere explicabo deleniti nulla earum aperiam illo, sit, corrupti quo voluptatum nostrum rem doloribus, aut ea cupiditate.</p>
+                                    
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">3.</span>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi quibusdam quidem excepturi similique deserunt earum numquam id magnam, dolorum dolore quam sequi quod facilis voluptate eius hic facere? Debitis, veritatis.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary btn-group-sm boton-opciones">OPCIONES DE CAMBIO</button>
+                    </div>
+                </div>
+
+                <!--MEDIA TARDE-->
+                <div class="cmr-element flip" id="flip5">
+                    @if(!meals.mediatarde)
+                    <div class="inner-container">
+                        <div class="icon-holder">
+                            <img src="{{ assetsUrl('img/icons/clear-menu-icon-2.png') }}" alt="">
+                        </div>
+                        <div class="name-holder">
+                            <span>MEDIA TARDE</span>
+                        </div>
+                        <div class="dropdown dropright">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="lg-icon lg-calendar-add"></div>
+                            </button>
+
+                            <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#add-menu-modal">
+                                    AÑADIR OTRA RECETA
+                                </a>
+                              
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#menu-personal-modal">
+                                    PERSONALIZAR RECETA
+                                </a>
+                             
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">RECETEAR</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    @endif
+                    @if(meals.mediatarde)
+                    <div class="content-title">
+                        <span>MEDIA TARDE</span>
+                    </div>
+                    <div class="content-container">
+                        <div class="image-holder">
+                            <img src="{{ assetsUrl('uploads/' + meals.mediatarde.receta.image) }}" alt="">
+                        </div>
+                        <div class="content-holder">
+                            <span>{{ meals.mediatarde.receta.title }}</span>
+                        </div>
+                        <div class="button-holder">
+                            <div class="dropdown dropleft">
+                                <a href="#" data-toggle="dropdown">
+                                    <div class="lg-icon lg-settings"></div>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item update-receta"  href="#" data-meal="mediatarde" data-content-id="{{ meals.mediatarde._id }}" data-receta-id="{{ meals.mediatarde.receta._id }}">CAMBIAR RECETA</a>
+                                    <a class="dropdown-item" href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: params.day }) }}?delete={{  meals.mediatarde._id }}">EUMINAR RECETA</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+                <div class="content-container panel" id="panel5">
+                    <div class="row panel-grup">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <img src="{{ assetsUrl('img/cg-1.png') }}" alt="..." class="img-thumbnail img-detail">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <h4 class="title-detail">TOSTADA CON HUEVO POCHADO, ESPINACAS Y TOMATES CHERRY</h4>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>INGREDIENTES</h5>
+                            <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span> Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                             <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span>  Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>PREPARACION</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">1.</span> 
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate obcaecati fugiat dolores ullam nam qui consequatur impedit vel vero. Nulla odio alias quasi voluptatibus eius. Inventore architecto saepe corporis eius.</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">2.</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt laborum repellendus cupiditate nobis. Facere explicabo deleniti nulla earum aperiam illo, sit, corrupti quo voluptatum nostrum rem doloribus, aut ea cupiditate.</p>
+                                    
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">3.</span>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi quibusdam quidem excepturi similique deserunt earum numquam id magnam, dolorum dolore quam sequi quod facilis voluptate eius hic facere? Debitis, veritatis.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary btn-group-sm boton-opciones">OPCIONES DE CAMBIO</button>
+                    </div>
+                </div>
+
+                <!--CENA-->
+                <div class="cmr-element flip" id="flip6">
+                    @if(!meals.cena)
+                    <div class="inner-container">
+                        <div class="icon-holder">
+                            <img src="{{ assetsUrl('img/icons/clear-menu-icon-4.png') }}" alt="">
+                        </div>
+                        <div class="name-holder">
+                            <span>CENA</span>
+                        </div>
+                        <div class="dropdown dropright">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="lg-icon lg-calendar-add"></div>
+                            </button>
+
+                            <div class=" dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#add-menu-modal">
+                                    AÑADIR OTRA RECETA
+                                </a>
+                              
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ route('test.menudetalles') + '?modal=true' }}" class="dropdown-item image-holder" data-toggle="modal" data-target="#menu-personal-modal">
+                                    PERSONALIZAR RECETA
+                                </a>
+                             
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">RECETEAR</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    @endif
+                    @if(meals.cena)
+                    <div class="content-title">
+                        <span>CENA</span>
+                    </div>
+                    <div class="content-container">
+                        <div class="image-holder">
+                            <img src="{{ assetsUrl('uploads/' + meals.cena.receta.image) }}" alt="">
+                        </div>
+                        <div class="content-holder">
+                            <span>{{ meals.cena.receta.title }}</span>
+                        </div>
+                        <div class="button-holder">
+                            <div class="dropdown dropleft">
+                                <a href="#" data-toggle="dropdown">
+                                    <div class="lg-icon lg-settings"></div>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item update-receta"  href="#" data-meal="cena" data-content-id="{{ meals.cena._id }}" data-receta-id="{{ meals.cena.receta._id }}">CAMBIAR RECETA</a>
+                                    <a class="dropdown-item" href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: params.day }) }}?delete={{  meals.cena._id }}">EUMINAR RECETA</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+                <div class="content-container panel" id="panel6">
+                    <div class="row panel-grup">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <img src="{{ assetsUrl('img/cg-3.png') }}" alt="..." class="img-thumbnail img-detail">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6">
+                                    <h4 class="title-detail">TOSTADA CON HUEVO POCHADO, ESPINACAS Y TOMATES CHERRY</h4>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>INGREDIENTES</h5>
+                            <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span> Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                             <ul class="list-group list-group-horizontal-lg panel-list-grup">
+                                <li class="list-group-item"><span class="list-item">.</span>  Cras justo odio</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Dapibus ac facilisis in</li>
+                                <li class="list-group-item"><span class="list-item">.</span> Morbi leo risus</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xl-12 panel-list">
+                            <h5>PREPARACION</h5>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">1.</span> 
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate obcaecati fugiat dolores ullam nam qui consequatur impedit vel vero. Nulla odio alias quasi voluptatibus eius. Inventore architecto saepe corporis eius.</p>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">2.</span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt laborum repellendus cupiditate nobis. Facere explicabo deleniti nulla earum aperiam illo, sit, corrupti quo voluptatum nostrum rem doloribus, aut ea cupiditate.</p>
+                                    
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-primary badge-pill">3.</span>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi quibusdam quidem excepturi similique deserunt earum numquam id magnam, dolorum dolore quam sequi quod facilis voluptate eius hic facere? Debitis, veritatis.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary btn-group-sm boton-opciones">OPCIONES DE CAMBIO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @include('pages/test/add-menu')
+    @include('pages/test/menu-personal')
+@endsection
+
+

@@ -1,0 +1,113 @@
+@layout('layouts/main')
+
+@section('content')
+     @include('pages/learning/podcasts/partials/subnavigation')
+     @include('pages/learning/podcasts/partials/actionbar')
+
+     <section class="page-content">
+               
+          <div class="container">
+
+               <div class="content-wrapper col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
+                    <div class="podcast-detail">
+                         <div class="pp-top">
+                              <div class="image-wrapper">
+                                   <img src="img/podcast-image.png" alt="">
+                              </div>
+                              <div class="content-wrapper">
+                                   <div class="top-title">PODCAST</div>
+                                   <div class="main-title">EL PODCAST DE YO PUEDO CON TODO</div>
+                                   <div class="pp-btn">
+                                    <a href="#">REPORDUCIR</a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="podcast-text">
+                         <div class="title">INFORMATION</div>
+                         <div class="text">
+                           <p>En el canal de Gym Virtual encontrarás rutinas de ejercicio para trabajar todo el cuerpo sin necesidad de salir de casa ni de utilizar ningún tipo de material. Además, encontraréis consejos sobre salud, alimentación y deporte, y recetas sanas y fáciles para hacer en casa.</p>
+                         </div>
+                    </div>
+
+                    <div class="podcast-list">
+                         <div class="pl-headers">
+                              <div class="plh-col"></div>
+                              <div class="plh-col">TITULO</div>
+                              <div class="plh-col">COMPLETADO</div>
+                              <div class="plh-col" style="text-align: center;">FECHA</div>
+                              <div class="plh-col" style="text-align: center;">TIEMPO</div>
+                         </div>
+                           <!-- ROW -->
+                         <div class="pl-row active-row">
+                              <!-- ICON -->
+                              <div class="plh-col">
+                                   <a href="#" class="play-btn">
+                                        <span class="lg-icon lg-play-btn"></span>
+                                   </a>
+                              </div>
+                              <!-- TITULO -->
+                              <div class="plh-col">
+                                   <div class="col-content">
+                                        <div class="title">MIEDO</div>
+                                        <div class="text">
+                                              <p>En el canal de Gym Virtual encontrarás rutinas de ejercicio para trabajar todo el cuerpo sin necesidad de salir de casa ni de utilizar ningún tipo de material.</p>
+                                        </div>
+                                    </div>
+                              </div>
+                              <!-- PROGRESS-->
+                              <div class="plh-col">
+                                   <div class="col-progress">
+                                      <div class="pl-progress">
+                                         <div class="bar" style="width: 100%;"></div>
+                                      </div>
+                                   </div>
+                              </div>
+                              <!-- DATE-->
+                              <div class="plh-col">
+                                <div class="col-date">
+                                  <div class="date-label">01 FEB 19</div>
+                                </div>
+                              </div>
+                              <!-- TIME-->
+                              <div class="plh-col">
+                                 <div class="col-time">
+                                   <div class="time-label">20:00</div>
+                                 </div>
+                               </div>
+                         </div>
+
+                    </div>
+
+               </div>
+
+               <aside class="page-aside-bar col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+
+                  <div class="aside-embed">
+                     <iframe style="height: 80px;" src="https://embed.spotify.com/?uri=spotify%3Auser%3Ablancoynegromusic%3Aplaylist%3A25sV9fH1SOKvZb6X2R2uRV&theme=white&view=coverart"></iframe>
+                  </div>
+         
+                  <div class="aside-image">
+                    <a href="#">
+                      <img src="img/sample-3.png" alt="">
+                    </a>
+                  </div>
+         
+                  <div class="aside-image" style="border: 1px solid #eee;">
+                     <a href="#">
+                      <img src="img/sample-2.png" alt="">
+                     </a>
+                  </div>
+         
+                  <div class="aside-image">
+                    <a href="#">
+                      <img src="img/sample-1.png" alt="">
+                    </a>
+                  </div>
+         
+               </aside>
+          </div>
+
+     </section>
+@endsection

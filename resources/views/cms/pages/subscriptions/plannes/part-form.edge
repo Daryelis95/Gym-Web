@@ -1,0 +1,93 @@
+
+<!-- Form -->
+
+<div class="modal fade" id="content-form-modal" tabindex="-1" role="dialog" aria-labelledby="content-form-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <form class="modal-content"  method="post" action="{{ route('cms.subscriptions.plannes', { subscription_id: params.subscription_id }) }}" enctype="multipart/form-data">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ edit ? 'Edit Planne' : 'Add Planne' }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="modal-body-section">
+
+                    <div class="form-col col-lg-12 col-md-12 col-sm-6 col-xs-12 {{ hasErrorFor('planne_id') ? 'alerted-control' : '' }}">
+                        <label for="planne_id">Planne</label>
+                        <div class="select">
+                            <select name="planne_id">
+                                <option value="" selected disabled>Choose Planne</option>
+
+                                @each(planne in plannes)
+                                <option value="{{ planne._id }}" {{ old('planne_id', edit.planne_id) == planne._id ? 'selected' : null }}>{{ planne.title }}</option>
+                                @endeach
+
+                            </select>
+                            <div class="arrow"></div>
+                        </div>
+
+                        @if(hasErrorFor('planne_id'))
+                        <div class="control-alert">
+                            <span class="fa fa-times"></span>
+                            <span>{{ getErrorFor('planne_id') }}</span>
+                        </div>
+                        @endif
+                    </div>
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('description') ? 'alerted-control' : '' }}">
+                            <label for="description">Description</label>
+                            <input type="text" name="description" value="{{ old('description', echo(edit.description)) }}" placeholder="Short Description"/>
+
+                            @if(hasErrorFor('description'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('description') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <label for="status">Status</label>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="status" value="active" name="status" {{ edit.status === true ? 'checked' : '' }} class='ios8-switch ios8-switch-lg'>
+                                <label for="status">Current Status: {{ edit.status === true ? 'Active' : 'Passive' }}</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{ csrfField() }}
+
+                    <input type="hidden" name="subscription_id" value="{{ params.subscription_id }}"/>
+
+                    @if(edit)
+                        <input type="hidden" name="id" value="{{ edit._id }}"/>
+                    @endif
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                @if(!edit)
+                <button type="submit" for="content-form" class="btn btn-primary float-right"><span class="fa fa-save"></span> Add Planne</button>
+                @else
+                <button type="submit" for="content-form" class="btn btn-success float-right"><span class="fa fa-pen"></span> Edit Planne</button>
+                @endif
+            </div>
+        </form>
+    </div>
+</div>
+
+@if(flashMessage('form') || edit || request.input('modal'))
+<script>
+
+    $(document).ready(function() {
+        $('#content-form-modal').modal('show');
+    });
+
+</script>
+@endif
+
+<!-- E:Form -->

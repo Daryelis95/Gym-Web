@@ -1,0 +1,128 @@
+
+
+    <section class="calendar-navigation-wrapper">
+        <div class="container">
+            <div class="calendar-navigation">
+
+                <div class="cn-top">
+                   
+                    <div class="cn-month col-xl-8 col-lg-8 col-md-8 col-sm-8 col-6">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-6">
+                                <div class="month-label-clear">TITULO DE PLAN</div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 borde {{ isActiveRoute('/test/*') }}">
+                                <a href="{{route ('test.menudetalles')}}">
+                                    <button class="borde">VISUALIZAR DIA</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cn-buttons col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+                       
+                        <a href="#">
+                            <div class="lg-icon lg-cloud-download-black"></div>
+                        </a>
+                        @if(edit)
+                         <a href="{{ route('nutricions.createMenu') + '?modal=true' }}" data-dismiss="modal" class="add-button">
+                            <div class="lg-icon lg-pen-black"></div>
+                        </a>
+                       @endif
+
+                       @if(!edit)
+                         <a href="#" data-dismiss="modal" class="add-button" data-toggle="modal" data-target="#content-form-modal">
+                            <div class="lg-icon lg-pen-black"></div>
+                         </a>
+                       @endif                        
+                    </div>
+                   
+                </div>
+
+            </div>
+            <div>
+                <div class="cn-week col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <!--@each(categoria in recetas.data)
+                     <a href="#" class="week-label hidden-xs">{{categoria.semana}}</a>
+                    @endeach-->
+                    <a href="#" class="week-label hidden-xs">SEMANA 1</a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="slider">
+                    <div class="owl-carousel owl-theme week-slider">
+                        <div class="item">
+                            <a href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: 1 }) }}" class="cn-week-day {{ params.day == 1 || !params.day  ? 'active' : '' }}">
+                                <div class="day-name">LUNES</div>
+                                <div class="line"></div>
+                                <div class="day-number dotted">
+                                    <div class="day-label">01</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: 2 }) }}" class="cn-week-day {{ params.day == 2 ? 'active' : '' }}">
+                                <div class="day-name">MARTES</div>
+                                <div class="line"></div>
+                                <div class="day-number dotted">
+                                    <div class="day-label">02</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: 3 }) }}" class="cn-week-day {{ params.day == 3 ? 'active' : '' }}">
+                                <div class="day-name">MIERCOLES</div>
+                                <div class="line"></div>
+                                <div class="day-number dotted">
+                                    <div class="day-label">03</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: 4 }) }}" class="cn-week-day {{ params.day == 4 ? 'active' : '' }}">
+                                <div class="day-name">JUEVES</div>
+                                <div class="line"></div>
+                                <div class="day-number dotted">
+                                    <div class="day-label">04</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: 5 }) }}" class="cn-week-day {{ params.day == 5 ? 'active' : '' }}">
+                                <div class="day-name">VIERNES</div>
+                                <div class="line"></div>
+                                <div class="day-number">
+                                    <div class="day-label">05</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: 6 }) }}" class="cn-week-day {{ params.day == 6 ? 'active' : '' }}">
+                                <div class="day-name">SABADO</div>
+                                <div class="line"></div>
+                                <div class="day-number">
+                                    <div class="day-label">06</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="{{ route('nutricions.crearmenu.detail', { menu_id: params.menu_id, day: 7 }) }}" class="cn-week-day {{ day == 7 ? 'active' : '' }}">
+                                <div class="day-name">DOMINGO</div>
+                                <div class="line"></div>
+                                <div class="day-number">
+                                    <div class="day-label">07</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+       </div>
+    </section>
+
+ 
+

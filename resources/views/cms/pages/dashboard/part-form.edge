@@ -1,0 +1,100 @@
+
+<!-- Form -->
+
+<div class="modal fade" id="content-form-modal" tabindex="-1" role="dialog" aria-labelledby="content-form-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <form class="modal-content"  method="post" action="{{ route('cms.dashboard') }}">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ edit ? 'Edit User : ' + edit.username :'Add User' }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="modal-body-section">
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('username') ? 'alerted-control' : '' }}">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" value="{{ old('username', edit.username) }}" placeholder="Username" required maxlength="32" {{ edit ? 'disabled': null }}/>
+
+                            @if(hasErrorFor('username'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('username') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-6 col-md-6 col-sm-12 col-xs-12 {{ hasErrorFor('roles') ? 'alerted-control' : '' }}">
+                            <label for="role">Main Role</label>
+                            <div class="select">
+                                <select name="roles[]">
+                                    <option value="" selected disabled>Choose Role</option>
+                                    <option value="admin" {{ old('roles[0]', edit.roles[0]) == 'admin' ? 'selected' : null }}>Admin</option>
+                                    <option value="editor" {{ old('roles[0]', edit.roles[0]) == 'editor' ? 'selected' : null }}>Editor</option>
+                                </select>
+                                <div class="arrow"></div>
+                            </div>
+
+                            @if(hasErrorFor('roles'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('roles') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('password') ? 'alerted-control' : '' }}">
+                            <label for="password">Password</label>
+                            
+                            <input type="password" name="password" value="{{ old('password', '') }}" placeholder="Password" {{ !edit ? 'required' : null  }} maxlength="32"/>
+
+                            @if(hasErrorFor('password'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('password') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label for="password_repeat">Password <span class="badge badge-secondary">Repeat</span></label>
+                            <input type="password" name="password_repeat" value="{{ old('password_repeat', '') }}" placeholder="Password" {{ !edit ? 'required' : null  }} maxlength="32"/>
+                        </div>
+                    </div>
+
+                    {{ csrfField() }}
+
+                    @if(edit)
+                        <input type="hidden" name="id" value="{{ edit._id }}"/>
+                    @endif
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                @if(!edit)
+                <button type="submit" for="content-form" class="btn btn-primary float-right"><span class="fa fa-save"></span> Add User</button>
+                @else
+                <button type="submit" for="content-form" class="btn btn-success float-right"><span class="fa fa-pencil"></span> Edit User</button>
+                @endif
+            </div>
+        </form>
+    </div>
+</div>
+
+@if(flashMessage('form') || edit || request.input('modal'))
+<script>
+
+    $(document).ready(function() {
+        $('#content-form-modal').modal('show');
+    });
+
+</script>
+@endif
+
+<!-- E:Form -->

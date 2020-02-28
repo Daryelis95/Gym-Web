@@ -1,0 +1,89 @@
+@layout('cms/layouts/main')
+
+@section('content')
+
+<section class="main-content-wrapper">
+    <div class="flex-box-wrapper">
+        @include('cms/pages/learning/blog/part-topbar')
+        <div class="table-container">
+            <table class="table table-consended">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Main Title</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Image</th>
+                        <th>Created At</th>
+                        <th class="text-right">Proccess</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @each(learning in learnings.data)
+
+                    <tr>
+                        <td><strong>{{ $loop.index + 1 }}</strong></td>
+                        <td><strong>{{ learning.title }}</strong></td>
+
+                        <td><strong>{{ learning.maintitle }}</strong></td>
+                        
+                        <td class="mw-25">
+                            <div class="fw-300 mw-300">{{ echo(learning.description, 50) }}</div>
+                        </td>
+                
+                        <td>
+                            <span class="badge {{ learning.status === true ? 'badge-success' : 'badge-secondary' }}">
+                                {{ learning.status === true ? 'Active' : 'Passive' }}
+                            </span>
+                        </td>
+
+                        <td class="mw-25">
+                            <img src="{{ learning.file }}" width="100px">
+                            {{--  <div class="fw-300 mw-300">{{ echo(learning.file, 50) }}</div>  --}}
+                        </td>
+
+                        <td class="mw-25">
+                            <div class="fw-300 mw-300">{{ humanDate(learning.created_at) }}</div>
+                        </td>
+
+                        <td class="buttons-td">
+                            @if(auth.user.roles[0] == 'admin')
+                            <a data-href="{{ route('cms.learning.blog', { id : learning._id, method: 'delete' }) }}" class="table-button remove-btn confirm-btn">
+                                <span class="fa fa-times"></span>
+                            </a>
+                            @endif
+                            <a href="{{ route('cms.learning.blog', { id : learning._id, method: 'edit' }) }}" class="table-button edit-btn" title="Edit Learning">
+                                <span class="fa fa-edit"></span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    @endeach
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BOTTOM PAGINATION -->
+
+        <div class="page-bottom">
+
+            <div class="pagination-container">
+                <a href="{{ getPrevPageURL(learnings) }}" class="prev-page">
+                    <span class="fa fa-arrow-left"></span>
+                </a>
+                <input type="text" name="current-page" value="{{ learnings.page }}">
+                <a href="{{ getNextPageURL(learnings) }}" class="next-page">
+                    <span class="fa fa-arrow-right"></span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+@include('cms/pages/learning/blog/part-form')
+@include('cms/partials/confirmation')
+@endsection

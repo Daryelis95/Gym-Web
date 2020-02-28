@@ -1,0 +1,768 @@
+@layout('layouts/main')
+
+@section('content')
+
+    @include('pages/rutinas/partials/subnavigation')
+
+    <section class="sub-navigation-wrapper action-bar">
+        <div class="container">
+
+            <div class="sub-navigation">
+                <div class="buttons visible-submenu col-7">
+                    <div class="category-select-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="select-sp">
+                            <select class="category-select" name="sub-menu">
+                                <option value="" disabled="disabled" selected="sselected">SELECT CATEGORY</option>
+                                <option value="">DULCES</option>
+                                <option value="">ENSALADA</option>
+                                <option value="">CREMA Y SOPAS</option>
+                                <option value="">DEYASYUNOS</option>
+                                <option value="">DULCES</option>
+                                <option value="">ENSALADA</option>
+                                <option value="">CREMA Y SOPAS</option>
+                                <option value="">DEYASYUNOS</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons hidden-submenu col-xl-9 col-lg-9 col-md-9 col-sm-8 col-8">
+                    <div class="action-menu-wrapper">
+                        <div class="ab-prev">
+                            <a href="#" class="ab-prev-btn">
+                                <div class="lg-icon lg-prev"></div>
+                            </a>
+                        </div>
+                        <div class="ab-next">
+                            <a href="#" class="ab-next-btn">
+                                <div class="lg-icon lg-next"></div>
+                            </a>
+                        </div>
+                        <div class="owl-carousel owl-theme action-menu">
+                            <div class="item">
+                                <a href="#" class="ab-link">FLEXIBILIDAD</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="ab-link">RETOS</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="ab-link">CARDIO</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="ab-link">EQUILIBIRO</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="ab-link">CALENTAMIENTO</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="ab-link">FULLBODY</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="ab-link">RETOS 2</a>
+                            </div>
+                            <div class="item">
+                                <a href="#" class="ab-link">FLEXIBILIDAD 2</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="buttons col-xl-3 col-lg-3 col-md-3 col-sm-4 col-5">
+                    <div class="icon-button">
+                        <a href="#" class="search-switch" class="red" data-toggle="tooltip" data-placement="bottom" title="Search">
+                            <div class="lg-icon lg-search-lined"></div>
+                        </a>
+                    </div>
+                    <div class="icon-button" data-toggle="tooltip" data-placement="bottom" title="Favorites">
+                        <a href="#" data-toggle="modal" data-target="#filter-modal">
+                            <div class="lg-icon lg-heart-gray"></div>
+                        </a>
+                    </div>
+                    <div class="icon-button">
+                        <a href="#" class="filter-switch" data-toggle="tooltip" data-placement="bottom" title="Filter Content">
+                            <div class="lg-icon lg-filter-gray"></div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="filter-abs">
+                <div class="container">
+
+                    <div class="filter-popup-wrapper">
+                        <div class="filter-body">
+
+                            <div class="filter-list-column col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12">
+                                <div class="fl-header">TIPO DE DIATES</div>
+                                <div class="fl-list">
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>BASICO</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>VEGETARIANO</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>VEGANO</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-list-column col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12">
+                                <div class="fl-header">PLATOS</div>
+                                <div class="fl-list">
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>ENTRANOS</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>PSOTERS</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>ACCOPAMENTIANO</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>PLATO PRINCIPIALS</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-list-column col-xl-2 col-lg-4 col-md-4 col-sm-4 col-12">
+                                <div class="fl-header">COMIDAS</div>
+                                <div class="fl-list">
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>DESAYUNO</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>COMIDA</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>CENA</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>TENTEPEMIA</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-list-column col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="fl-header">TOP DIE ENTERTAMIENTO</div>
+                                <div class="fl-list fl-list-3">
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>DESAYUNO</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>COMIDA</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>CENA</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>TENTEPEMIA</span>
+                                    </label>
+                                </div>
+
+                                <!-- FL 3 -->
+
+                                <div class="fl-list fl-list-3">
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>DESAYUNO</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>COMIDA</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>CENA</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>TENTEPEMIA</span>
+                                    </label>
+                                </div>
+
+                                <!-- FL 3 -->
+
+                                <div class="fl-list fl-list-3">
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>DESAYUNO</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>COMIDA</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>CENA</span>
+                                    </label>
+                                    <label class="filter-cell">
+                                        <input type="checkbox" name="filter[]"/>
+                                        <div class="cell-marker">
+                                            <span class="true la la-check"></span>
+                                            <span class="false la la-circle"></span>
+                                        </div>
+                                        <span>TENTEPEMIA</span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <div class="filter-buttons">
+                                <div class="fl-button">
+                                    <a href="#">FILTRAR</a>
+                                </div>
+                                <div class="fl-button opac">
+                                    <a href="#" class="filter-switch">LIMPIAR FILTRO</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PAGE CONTENT -->
+
+    <div class="search-wrapper">
+        <div class="container">
+            <div class="search-input-contianer">
+                <div class="search-input">
+                    <input type="text" name="search" value="" placeholder="Esqurice Equal Para Buscar...">
+                    <a href="#">
+                        <span class="la la-remove"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-content">
+        <div class="container">
+
+            <div class="content-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                <div class="content-seperator"></div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-1.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS PILERNAS</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-2.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS ENTRENAMINETO</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-3.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS BRAZOS</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-4.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">TOTAL BODY</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-1.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS PILERNAS</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-2.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS ENTRENAMINETO</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-3.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS BRAZOS</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-4.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">TOTAL BODY</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-1.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS PILERNAS</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-2.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS ENTRENAMINETO</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-3.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS BRAZOS</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-1.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">GLUTEOS PILERNAS</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-4.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">TOTAL BODY</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid-item-wrapper col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="content-grid-item">
+                        <a href="#" class="image-holder">
+                            <div class="play-badge">
+                                <span class="lg-icon lg-play-white"></span>
+                            </div>
+                            <img src="img/rutina-4.jpg" alt=""/>
+                        </a>
+                        <div class="content-holder">
+                            <a href="#" class="h4">TOTAL BODY</a>
+                            <div class="buttons">
+                                <a href="#" class="favorite-btn right-fl">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                <a href="#" class="calendar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- PAGI -->
+
+                <div class="pagination-select-wrapper">
+                    <h4>PAGE</h4>
+                    <div class="select-sp">
+                        <select class="pagination-select" name="sub-menu">
+                            <option value="">PAGE 1</option>
+                            <option value="">PAGE 2</option>
+                            <option value="">PAGE 3</option>
+                            <option value="">PAGE 4</option>
+                            <option value="">PAGE 5</option>
+                            <option value="">PAGE 6</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pagination-wrapper">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link active" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">5</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">6</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MOBILE NAV -->
+
+    <section class="mobile-navigation">
+        <div class="close-button">
+            <a href="#">
+                <span class="la la-arrow-left"></span>
+            </a>
+        </div>
+        <div class="inner-wrapper">
+
+            <div class="account-info-holder">
+                <div class="mobile-account-info">
+                    <div class="mba-picture-holder">
+                        <a href="#" class="mba-picture">
+                            <!-- <img src="" alt=""> -->
+                            <span>S.A.</span>
+                        </a>
+                    </div>
+                    <div class="mba-info-holder">
+                        <div class="name">Sabri Ayeş</div>
+                        <div class="email">sabri@qode.com</div>
+                        <a href="#" class="logout"><span class="la la-sign-out"></span>Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-holder">
+                <div class="mobile-nav">
+                    <div class="nav-element active-element">
+                        <a href="#"><span>NUTRICION</span></a>
+                    </div>
+                    <div class="nav-element">
+                        <a href="#"><span>WORKOUT</span></a>
+                    </div>
+                    <div class="nav-element">
+                        <a href="#"><span>AREA APRENDIZAJE</span></a>
+                    </div>
+                    <div class="nav-element">
+                        <a href="#"><span>COMUNIDAD</span></a>
+                    </div>
+                    <div class="nav-element last-element">
+                        <a href="#"><span>SHOP</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+@endsection

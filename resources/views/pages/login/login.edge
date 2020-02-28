@@ -1,0 +1,62 @@
+@layout('layouts/main')
+
+@section('content')
+
+    <section class="page-content">
+        <div class="container">
+
+            <div class="content-wrapper col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12 offset-xl-3 offset-lg-2 offset-md-0">
+
+                <div class="content-seperator"></div>
+
+                <div class="register-box">
+                    <div class="regbox-header">
+                        <span>SIGN IN</span>
+                    </div>
+                    <form name="register-form" method="post" action="{{ route('login') }}" class="gym-form">
+                        <div class="gym-input-element {{ hasErrorFor('email') ? 'alerted-control' : '' }}">
+                            <div class="label-holder">
+                                <span>Email Address</span>
+                            </div>
+                            <div class="input-holder">
+                                <input type="email" name="email" value="{{ old('email') }}" placeholder="Your Email Address" required>
+                            </div>
+                            @if(hasErrorFor('email'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('email') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="gym-input-element {{ hasErrorFor('password') ? 'alerted-control' : '' }}">
+                            <div class="label-holder">
+                                <span>Password</span>
+                            </div>
+                            <div class="input-holder password-input">
+                                <input type="password" name="password" value="{{ old('password') }}" placeholder="Password" required>
+                            </div>
+                            @if(hasErrorFor('password'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('password') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        {{ csrfField() }}
+
+                        <div class="gym-button-element">
+                            <button type="submit" class="gym-submit">
+                                <span>SIGN IN</span>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+@endsection

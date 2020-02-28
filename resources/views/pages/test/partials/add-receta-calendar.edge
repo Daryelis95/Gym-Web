@@ -1,0 +1,31 @@
+<div class="modal fade" id="add-clear-menu-modal" tabindex="-1" role="dialog" aria-labelledby="add-clear-menu-modal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form name="add-form" action="{{ route('nutricions.crearmenu') }}" method="post" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="add-clear-menu-modal">ADD RECETAS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="la la-remove"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="realize-form">
+                    <div class="rf-textarea">
+                        <div class="header">CHOOSE RECETA</div>
+                        <select class="gym-selectbox" name="receta_id">
+                            @each(receta in recetas)
+                            <option value="{{ receta._id }}">{{ receta.title }}</option>
+                            @endeach
+                        </select>
+                    </div>
+                </div>
+                <input type="hidden" name="day" id="day-input"/>
+                <input type="hidden" name="meal" id="meal-input"/>
+                <input type="hidden" name="proccess" value="receta"/>
+            </div>
+            <div class="modal-footer">
+                {{ csrfField() }}
+                <button type="submit" class="btn btn-primary">GUARDAR</button>
+            </div>
+        </form>
+    </div>
+</div>

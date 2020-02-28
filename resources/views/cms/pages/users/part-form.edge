@@ -1,0 +1,125 @@
+
+<!-- Form -->
+
+<div class="modal fade" id="content-form-modal" tabindex="-1" role="dialog" aria-labelledby="content-form-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <form class="modal-content"  method="post" action="{{ route('cms.users') }}">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ edit ? 'Edit User : ' + edit.name + ' ' + edit.surname :'Add User' }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="modal-body-section">
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('name') ? 'alerted-control' : '' }}">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" value="{{ old('name', edit.name) }}" placeholder="Name" required maxlength="60"/>
+
+                            @if(hasErrorFor('name'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('name') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('surname') ? 'alerted-control' : '' }}">
+                            <label for="surname">Surname</label>
+                            <input type="text" name="surname" value="{{ old('surname', edit.surname) }}" placeholder="Surname" required maxlength="60"/>
+
+                            @if(hasErrorFor('surname'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('surname') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('name') ? 'alerted-control' : '' }}">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" value="{{ old('email', edit.email) }}" placeholder="Email" required maxlength="255"/>
+
+                            @if(hasErrorFor('email'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('email') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('gender') ? 'alerted-control' : '' }}">
+                            <label for="gender">Gender</label>
+                            <div class="select">
+                                <select name="gender">
+                                    <option value="" selected disabled>Choose Gender</option>
+                                    <option value="male" {{ old('gender', edit.gender) == 'male' ? 'selected' : null }}>Male</option>
+                                    <option value="female" {{ old('gender', edit.gender) == 'female' ? 'selected' : null }}>Female</option>
+                                </select>
+                                <div class="arrow"></div>
+                            </div>
+                            @if(hasErrorFor('gender'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('gender') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('password') ? 'alerted-control' : '' }}">
+                            <label for="password">Password</label>
+
+                            <input type="password" name="password" value="{{ old('password', '') }}" placeholder="Password" {{ !edit ? 'required' : null  }} maxlength="32"/>
+
+                            @if(hasErrorFor('password'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('password') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label for="password_repeat">Password <span class="badge badge-secondary">Repeat</span></label>
+                            <input type="password" name="password_repeat" value="{{ old('password_repeat', '') }}" placeholder="Password" {{ !edit ? 'required' : null  }} maxlength="32"/>
+                        </div>
+                    </div>
+
+                    {{ csrfField() }}
+
+                    @if(edit)
+                        <input type="hidden" name="id" value="{{ edit._id }}"/>
+                    @endif
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                @if(!edit)
+                <button type="submit" for="content-form" class="btn btn-primary float-right"><span class="fa fa-save"></span> Add User</button>
+                @else
+                <button type="submit" for="content-form" class="btn btn-success float-right"><span class="fa fa-pen"></span> Edit User</button>
+                @endif
+            </div>
+        </form>
+    </div>
+</div>
+
+@if(flashMessage('form') || edit || request.input('modal'))
+<script>
+
+    $(document).ready(function() {
+        $('#content-form-modal').modal('show');
+    });
+
+</script>
+@endif
+
+<!-- E:Form -->

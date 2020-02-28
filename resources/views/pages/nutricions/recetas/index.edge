@@ -1,0 +1,360 @@
+@layout('layouts/main')
+
+  @section('content')
+     @include('pages/nutricions/recetas/partials/subnavigation')
+
+     <section class="page-content">
+        @include('pages/nutricions/recetas/partials/calendar')
+     </section>
+
+     <section class="page-content">
+        <div class="container">
+            <div class="row">
+               
+                <!--FILA 1-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 col-menu">
+                    <div class="row ">
+                    <!--ARTICLE 1-->
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xl-5 col-menu">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add menu-one">
+                                    @if(edit)
+                                       <a href="{{ route('nutricions.recetas') + '?modal=true' }}" data-dismiss="modal" class="add-button">
+                                        <h6 class="menu-title">AÑADE TU MENU</h6>
+                                       </a>
+                                    @endif
+               
+                                    @if(!edit)
+                                        <a href="#" data-dismiss="modal" class="add-button" data-toggle="modal" data-target="#add-menu-modal">
+                                            <h6 class="menu-title">AÑADE TU MENU</h6>
+                                        </a>
+                                    @endif
+                                    
+                                    <span class="fa fa-plus"></span>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                           
+                                        </div>
+                                           <hr style="color:black">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-2.png') }}" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <strong class="texto">La gastronomía de Italia :</strong>
+                                    <p> es muy variada</p>
+                                </div>
+                            </div>
+                        </div>
+                     <!--ARTICLE 2-->
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xl-7 col-menu">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                    <h6 class="menu-title">AÑADE TU MENU  <span class="fa fa-plus"></span> 
+                                    </h6>
+                                    
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                        </div>
+                                            <hr class="hr">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-3.png') }}" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                    <strong>La gastronomía de Italia :</strong>
+                                    <p> es muy variada</p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                        <img class="celd-im" src="{{ assetsUrl('img/detail-1.png') }}" alt=""/>
+                                    </div>
+                                    <hr class="hr">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                        <p class="celd-img">Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!--FILA 2-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 col-menu">
+                    <div class="row ">
+                        <!--ARTICLE 1-->
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xl-5 col-menu">
+                            <div class="row">
+                            
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <h6 class="menu-title">AÑADE TU MENU  <span class="fa fa-plus"></span> 
+                                    </h6>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <p class="menu-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p >Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                        </div>
+                                            <hr class="hr">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-3.png') }}" alt=""/>
+                                        </div>
+                                    </div>
+                                 </div>
+                                        
+                            </div>
+                        </div>
+                        <!--ARTICLE 2-->
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xl-7 col-menu">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xl-3 menu-add">
+                                    <p class="menu-title">Lorem ipsum dolor iis</p> 
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xl-3 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                        </div>
+                                            <hr class="hr">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-3.png') }}" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xl-3 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                                   
+                                        </div>
+                                            <hr style="color:black">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-2.png') }}" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add menu-one">
+                                        <h6 class="menu-title">AÑADE TU MENU</h6>
+                                        <span class="fa fa-plus"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--FILA 3-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 col-menu">
+                        <div class="row ">
+                        <!--ARTICLE 1-->
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xl-5 col-menu">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add menu-one">
+                                        <h6 class="menu-title">AÑADE TU MENU</h6>
+                                        <span class="fa fa-plus"></span>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                                <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                               
+                                            </div>
+                                               <hr style="color:black">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                                <img class="celd-img" src="{{ assetsUrl('img/cg-2.png') }}" alt=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                        <strong class="texto">La gastronomía de Italia :</strong>
+                                        <p> es muy variada</p>
+                                    </div>
+                                </div>
+                            </div>
+                         <!--ARTICLE 2-->
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xl-7 col-menu">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                        <h6 class="menu-title">AÑADE TU MENU  <span class="fa fa-plus"></span> 
+                                        </h6>
+                                        
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                                <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                            </div>
+                                                <hr class="hr">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                                <img class="celd-img" src="{{ assetsUrl('img/cg-3.png') }}" alt=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                        <strong>La gastronomía de Italia :</strong>
+                                        <p> es muy variada</p>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-im" src="{{ assetsUrl('img/detail-1.png') }}" alt=""/>
+                                        </div>
+                                        <hr class="hr">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p class="celd-img">Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div> 
+                <!--FILA 4-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 col-menu">
+                    <div class="row ">
+                            <!--ARTICLE 1-->
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xl-5 col-menu">
+                            <div class="row">
+                                
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <h6 class="menu-title">AÑADE TU MENU  <span class="fa fa-plus"></span> 
+                                    </h6>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <p class="menu-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p >Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                        </div>
+                                            <hr class="hr">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-3.png') }}" alt=""/>
+                                        </div>
+                                     </div>
+                                </div>
+                                            
+                            </div>
+                        </div>
+                            <!--ARTICLE 2-->
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xl-7 col-menu">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xl-3 menu-add">
+                                    <p class="menu-title">Lorem ipsum dolor iis</p> 
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xl-3 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                        </div>
+                                            <hr class="hr">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-3.png') }}" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xl-3 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                                       
+                                        </div>
+                                            <hr style="color:black">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-2.png') }}" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add menu-one">
+                                    <h6 class="menu-title">AÑADE TU MENU</h6>
+                                    <span class="fa fa-plus"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--FILA 5-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12 col-menu">
+                    <div class="row ">
+                        <!--ARTICLE 1-->
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xl-5 col-menu">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add menu-one">
+                                    <h6 class="menu-title">AÑADE TU MENU</h6>
+                                    <span class="fa fa-plus"></span>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                               
+                                        </div>
+                                            <hr style="color:black">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-2.png') }}" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 menu-add">
+                                    <strong class="texto">La gastronomía de Italia :</strong>
+                                    <p> es muy variada</p>
+                                </div>
+                            </div>
+                        </div>
+                         <!--ARTICLE 2-->
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xl-7 col-menu">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                    <h6 class="menu-title">AÑADE TU MENU  <span class="fa fa-plus"></span> 
+                                    </h6>
+                                        
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <p>Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                        </div>
+                                            <hr class="hr">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                            <img class="celd-img" src="{{ assetsUrl('img/cg-3.png') }}" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                    <strong>La gastronomía de Italia :</strong>
+                                    <p> es muy variada</p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xl-3 menu-add">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                        <img class="celd-im" src="{{ assetsUrl('img/detail-1.png') }}" alt=""/>
+                                    </div>
+                                    <hr class="hr">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                                        <p class="celd-img">Lorem ipsum dolor sit amet consecteranditiis</p> 
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+     </section>
+
+     
+
+     @include('pages/nutricions/recetas/titlemenu-form')
+     @include('pages/nutricions/recetas/add-menu')
+     @include('pages/nutricions/recetas/menu-personal')
+  @endsection

@@ -1,0 +1,510 @@
+@layout('layouts/main')
+
+@section('content')
+
+
+<div class="area-section">
+    <div class="container-perfil">
+        <div class="area-main-header">
+            <h1 class="text font-weight-bold">AREA PRIVADA</h1>
+        </div>
+    </div>
+  </div>
+
+  @include('pages/perfil/partials/subnavigation')
+
+
+  <div class="form-wrapper">
+      <div class="container-perfil">
+          <div class="form-container row">
+              <div class="header col-12">
+                  <div class="">
+                      <h1 class="text font-weight-bold text-color-blue">PERFIL</h1> 
+                  </div>
+              </div>
+              <div class="form1 col-12 col-md-8">
+                  <!-- making form -->
+                        <form class="py-2 row col-12" action="{{ '/user/update' + '?_method=PUT' }}" method="POST">
+                            {{ csrfField() }}
+                            <div class="header col-12 my-4">
+                                <div class="sub-header">
+                                    <h4>{{ auth.user.name }} <strong>{{ auth.user.surname }}</strong> </h4>     
+                                </div>
+                            </div>
+                            <div class="form-group col-6 row">
+                                <label for="input1" class="col-4 col-form-label">Nick</label>
+                                <div class="col-8">
+                                    <input type="text" name="nick" class="form-control" id="nick" placeholder="Nick"
+                                value="{{ auth.user.nick ? auth.user.nick : 'Ingrese su Nick' }}">
+                                </div>
+                            </div>
+                            <div class="form-group col-6 row">
+                                <label for="input2" class="col-4 col-form-label">Nombre</label>
+                                <div class="col-8">
+                                    <input type="text" name="name" class="form-control" id="input2" placeholder="Nombre"
+                                     value="{{ auth.user.name ? auth.user.name : 'Ingrese su nombre' }}">
+                                </div>
+                            </div>
+                            <div class="form-group col-6 row">
+                                <label for="input3" class="col-4 col-form-label">Edad</label>
+                                <div class="col-8">
+                                    <input type="text" name="age" class="form-control" id="input3" placeholder="Edad" 
+                                    value="{{ auth.user.age ? auth.user.age : 'Ingrese su edad' }}">
+                                </div>
+                            </div>
+                            <div class="form-group col-6 row">
+                                    <label for="input4" class="col-4 col-form-label">Pais</label>
+                                    <div class="col-8">
+                                        <input type="text" name="country" class="form-control" id="input4" placeholder="Pais"
+                                        value="{{ auth.user.country ? auth.user.country : 'Ingrese su país' }}">
+                                    </div>
+                                </div>
+                            <div class="form-group col-6 row">
+                                <label for="input5" class="col-4 col-form-label">Correo</label>
+                                <div class="col-8">
+                                    <input type="text" name="email" class="form-control" id="input5" placeholder="Correo"
+                                    value="{{ auth.user.email ? auth.user.email : 'Ingrese su email' }}">
+                                </div>
+                            </div>
+                            <div class="form-group col-6 row">
+                                <label for="input6" class="col-4 col-form-label">Género</label>
+                                    <div class="col-8">
+                                    <input type="text" name="gender" class="form-control" id="input6" placeholder="Género"
+                                    value="{{ auth.user.gender ? auth.user.gender : 'Ingrese su género' }}">
+                                </div>
+                            </div>
+                            <div class="form-group col-6 row">
+                                <label for="input7" class="col-4 col-form-label">Peso</label>
+                                <div class="col-8">
+                                    <input type="text" name="weight" class="form-control" id="input7" placeholder="Peso"
+                                    value="{{ auth.user.weight ? auth.user.weight : 'Ingrese su peso' }}">
+                                </div>
+                            </div>
+                            <div class="form-group col-6 row">
+                                <label for="input8" class="col-4 col-form-label">Altura</label>
+                                <div class="col-8">
+                                    <input type="text" name="height" class="form-control" id="input8" placeholder="Altura"
+                                    value="{{ auth.user.height ? auth.user.height : 'Ingrese su altura' }}">
+                                </div>
+                            </div>
+                            <div class="header col-12 my-4">
+                                <div class="sub-header">
+                                    <h4>Redes <strong>Sociales</strong></h4>     
+                                </div>
+                            </div>
+                            <div class="form-group col-12 row">
+                                <label for="input9" class="col-4 col-form-label">Facebook</label>
+                                <div class="col-8">
+                                    <input type="text" name="facebook" class="form-control" id="input9" placeholder="@cuenta"
+                                    value="{{ auth.user.facebook ? auth.user.facebook : 'Ingrese su facebook' }}">
+                                </div>
+                            </div>
+                            <div class="form-group col-12 row">
+                                <label for="input10" class="col-4 col-form-label">Instagram</label>
+                                <div class="col-8">
+                                    <input type="text" name="instagram" class="form-control" id="input10" placeholder="@cuenta"
+                                    value="{{ auth.user.instagram ? auth.user.instagram : 'Ingrese su instagram' }}">
+                                </div>
+                            </div>
+                            <div class="form-group col-12 row">
+                                <label for="input11" class="col-4 col-form-label">Twitter</label>
+                                <div class="col-8">
+                                    <input type="text" name="twitter" class="form-control" id="input11" placeholder="@cuenta"
+                                    value="{{ auth.user.twitter ? auth.user.twitter : 'Ingrese su twitter' }}">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
+              </div>
+              <div class="card col-12 col-md-4 border-0 d-flex align-items-center mt-5">
+                    <div class="card-img-top container-img rounded-circle">
+                            <!-- Haz la validación acá -->
+                            <img src="img/podcast-image.png" alt="Avatar" class="image">
+
+                            <div class="overlay" data-toggle="modal" data-target="#modalImage">
+                                <h6>Cambiar</h6>
+                            </div>
+                    </div>
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <a href="#" class="pb-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                <i class="la la-download"></i> Imprimibles
+                            </button>
+                        </a>
+                        
+                        <a href="#" class="pb-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                <i class="la la-paper-plane"></i> Enviar Transformación
+                            </button>
+                        </a>
+
+                        <a href="#" class="pb-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                <i class="la la-signal"></i> Encuesta Satisfactoria
+                            </button>
+                        </a>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal de imagen -->
+  <div class="modal fade" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cambiar foto de perfil</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="{{ '/user/update-image' + '?_method=PUT' }}" method="POST">
+                {{ csrfField() }}
+ 
+                        <div class="form-group mx-5 d-flex align-items-center flex-column">
+                          <label for="exampleFormControlFile1">Seleccione la imagen que desea</label>
+                          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                   
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Cambiar imagen</button>
+                  </div>
+            </form> 
+          </div>
+        </div>
+      </div>
+
+  <div class="mıs-planes-wrapper mt-5">
+      <div class="container-perfil">
+          <div class="mıs-planes-container">
+              <div class="header">
+
+                <h4>Mis Planes / Compras</h4>
+
+              </div>
+          </div>
+      </div>
+  </div>
+  
+      <div class="container-perfil">
+          <div class="row d-flex align-items-center justify-content-around shadow p-3 mt-3 mb-5 bg-white rounded">
+              
+                     
+                                <div class="col-6 col-md-2 image">
+                                    <a href="#">
+                                        <img src="img/nut-1.png" alt="" class="rounded" style="width: 100px;">
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-2">
+                                    <a href="#">
+                                        <h5 class="text-color-blue m-0">Plan 28 días</h5>
+                                    </a>
+                                </div>
+                              <div class="col-12 col-md-8 d-flex justify-content-around my-2">
+                                    <a class="p-2 btn btn-outline-info border border-info mx-1" href="#">CONFIGURACION <i class="la la-cog"></i></a>
+                                    
+                                    <a class="p-2 btn btn-outline-info border border-info mx-1" href="#">DESCARGA <i class="la la-download"></i></a>
+                                       
+                                    <a class="p-2 btn btn-outline-info border border-info mx-1" href="#">ENTRENAMIENTO <i class="la la-calendar"></i></a>
+                              </div>
+                                
+           
+                  
+          </div>
+      </div>
+
+      <div class="container-perfil my-5">
+            <h3 class="py-3">Progreso</h3>
+            <h4 class="py-3">Control de peso</h4>
+            <canvas data-days={{auth.user.graphDay}} data-weights={{auth.user.graphWeight}} data-months={{auth.user.graphMonth}} id="myChart" width="auto" height="100"></canvas>
+                  <!-- Button trigger modal -->
+            <div class="row">
+                <div class="btn-group col-12 col-md-5 offset-md-7" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalDelete">
+                            Quitar Peso -
+                    </button>
+                    <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalAdd">
+                            Agregar Peso +
+                    </button>
+                </div>
+            </div>
+            
+      </div>
+      
+
+  
+  <!-- Modal 1 -->
+  <div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Peso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="{{ '/user/update-weight' + '?_method=PUT' }}" method="POST">
+            {{ csrfField() }}
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <select name="selectMonth" class="custom-select mr-sm-2" required> 
+                            <option value="enero">enero</option>
+                            <option value="febrero">febrero</option>
+                            <option value="marzo">marzo</option>
+                            <option value="abril">abril</option>
+                            <option value="mayo">mayo</option>
+                            <option value="junio">junio</option>
+                            <option value="julio">julio</option>
+                            <option value="agosto">agosto</option>
+                            <option value="septiembre">septiembre</option>
+                            <option value="octubre">octubre</option>
+                            <option value="noviembre">noviembre</option>
+                            <option value="diciembre">diciembre</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select name="selectDay" class="custom-select mr-sm-2" required>
+                            <option selected>Día</option>
+                            <option value="1">1</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                      <input name="weight" type="number" class="form-control" placeholder="Peso" required>
+                    </div>
+                </div>         
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Agregar Peso</button>
+              </div>
+        </form> 
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Quitar Peso</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="{{ '/user/delete-weight' + '?_method=PUT' }}" method="POST">
+                {{ csrfField() }}
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <select name="deleteWeight" class="custom-select mr-sm-2">
+                                @each(option in options)
+                                    <option value={{option.id}} required>{{option.message}}</option>
+                                @else
+                                    <option>No hay pesos registrados</option>
+                                @endeach
+                            </select>
+                        </div>
+                    </div>         
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Quitar Peso</button>
+                  </div>
+            </form> 
+          </div>
+        </div>
+      </div>
+      
+  
+
+
+  <div class="area-pirivada-table-header">
+      <div class="container-perfil">
+          <div class="area-pirivada-header">
+                <h4 class="py-3">Control de medidas</h4>           
+          </div>
+      </div>
+  </div>
+
+  <div class="area-pirivada-table">
+      <div class="container-perfil">
+          <div class="table-responsive">
+              <div class="area-pirivada-table-wrapper ">
+                  <table class="table table-bordered">
+                      <thead>
+                          <tr>
+                              <th scope="col">FECHA</th>
+                              <th scope="col">BICEPS</th>
+                              <th scope="col">PECHO</th>
+                              <th scope="col">CINTURA ALTA</th>
+                              <th scope="col">CINTURA BAJA</th>
+                              <th scope="col">CADERA</th>
+                              <th scope="col">MUSLO</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        @each(medida in medidas)
+                            <tr>
+                                <td>{{medida.fecha}}</td>
+                                <td>{{medida.biceps}}</td>
+                                <td>{{medida.pecho}}</td>
+                                <td>{{medida.cinturaAlta}}</td>
+                                <td>{{medida.cinturaBaja}}</td>
+                                <td>{{medida.cadera}}</td>
+                                <td>{{medida.muslo}}</td>
+                            </tr>
+                        @else
+                            <tr>
+                                <td>No hay medidas registradas</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        @endeach
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-sm-12 col-md-12 col-lg-8">
+                  <div class="table-button-container">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalDeleteMedida">
+                                            Quitar medida -
+                                    </button>
+                                    <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#modalMedidas">
+                                            Añadir medida +
+                                    </button>
+                                </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal 3 -->
+
+  <div class="modal fade" id="modalMedidas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content px-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Añadir medida</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="{{ '/user/add-medida' + '?_method=PUT' }}" method="POST">
+            {{ csrfField() }}
+            <form>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label for="Fecha">Fecha</label>
+                    <input name="fecha" type="date" class="form-control" id="Fecha" placeholder="Fecha" required>
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="Biceps">Biceps</label>
+                    <input name="biceps" type="number" class="form-control" id="Biceps" placeholder="Biceps" required>
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="Pecho">Pecho</label>
+                    <input name="pecho" type="number" class="form-control" id="Pecho" placeholder="Pecho" required>
+                  </div>
+                  <div class="form-group col-6">
+                    <label for="CinturaAlta">Cintura alta</label>
+                    <input name="cinturaAlta" type="number" class="form-control" id="CinturaAlta" placeholder="Cintura alta" required>
+                  </div>
+                  <div class="form-group col-4">
+                    <label for="CinturaBaja">Cintura baja</label>
+                    <input name="cinturaBaja" type="number" class="form-control" id="CinturaBaja" placeholder="Cintura baja" required>
+                  </div>
+                  <div class="form-group col-4">
+                    <label for="Cadera">Cadera</label>
+                    <input name="cadera" type="number" class="form-control" id="Cadera" placeholder="Cadera" required>
+                  </div>
+                  <div class="form-group col-4">
+                    <label for="Muslo">Muslo</label>
+                    <input name="muslo" type="number" class="form-control" id="Muslo" placeholder="Muslo" required>
+                  </div>
+                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Añadir</button>
+              </div>
+        </form> 
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal a -->
+  <div class="modal fade" id="modalDeleteMedida" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Quitar Medida</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="{{ '/user/delete-medida' + '?_method=PUT' }}" method="POST">
+                {{ csrfField() }}
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <select name="deleteMedida" class="custom-select mr-sm-2">
+                                @each(medida in medidas)
+                                    <option value={{medida.id}} required>{{medida.fecha}}</option>
+                                @else
+                                    <option>No hay medidas registradas</option>
+                                @endeach
+                            </select>
+                        </div>
+                    </div>         
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Quitar Medida</button>
+                  </div>
+            </form> 
+          </div>
+        </div>
+      </div>
+      
+
+  <div class="container-perfil my-5">
+ 
+                <h4>Suscripción</h4>
+                <a class="dropdown-item" href="#">Mi suscripción</a>
+                <a class="dropdown-item" href="#">Condiciones de pago</a>
+
+  </div>
+ 
+
+  <div class="container-perfil my-5">
+        <form action="{{ '/user/update-pass' + '?_method=PUT' }}" method="POST">
+            {{ csrfField() }}
+                <h4>Contraseña</h4>
+                <div class="form-group">
+                  <label for="password">Contraseña Actual</label>
+                  <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                        <label for="newPassword">Nueva Contraseña</label>
+                        <input name="pass1" type="password" class="form-control" id="pass1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                        <label for="newPasswordConfirmation">Repetir Contraseña</label>
+                        <input name="pass2" type="password" class="form-control" id="pass2" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+  </div>
+
+@endsection

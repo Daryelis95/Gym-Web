@@ -1,0 +1,192 @@
+@layout('/layouts/main')
+
+@section('content')
+
+    @include('pages/plannes/partials/subnavigation')
+     <section class="page-content">
+        <div class="container">
+
+        <!-- CONTENT -->
+
+        <div class="content-wrapper grayed-wr col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+            <div class="plan-list-wrapper">
+
+                <div class="pl-header">PLAN A REALIZAR</div>
+
+                <!-- TOP -->
+
+                <div class="pl-top">
+                    <div class="pl-check-container">
+                        <div class="check-row">
+                            <div class="input">
+                                <label class="filter-cell">
+                                    <input type="checkbox" name="filter[]"/>
+                                    <div class="cell-marker">
+                                        <span class="true la la-check"></span>
+                                        <span class="false la la-circle"></span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="text">
+                                <span>PLAN PRINCIPIANTES</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pl-progress">
+                        <div class="pl-bar" style="width: 20%;"></div>
+                    </div>
+                    <div class="pl-navigation">
+                        <div class="sub-navigation">
+                            <div class="buttons visible-submenu col-7">
+                                <div class="category-select-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="select-sp">
+                                        <select class="category-select" name="sub-menu">
+                                            <option value="" disabled="disabled" selected="selected">SELECT CATEGORY</option>
+                                            <option value="">NIVEL</option>
+                                            <option value="">HOY</option>
+                                            <option value="">SEMANA 1</option>
+                                            <option value="">SEMANA 2</option>
+                                            <option value="">SEMANA 3</option>
+                                            <option value="">SEMANA 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="buttons hidden-submenu col-xl-9 col-lg-9 col-md-9 col-sm-8 col-8">
+                                <div class="action-menu-wrapper">
+                                    <div class="ab-prev">
+                                        <a href="#" class="ab-prev-btn">
+                                            <div class="lg-icon lg-prev"></div>
+                                        </a>
+                                    </div>
+                                    <div class="ab-next">
+                                        <a href="#" class="ab-next-btn">
+                                            <div class="lg-icon lg-next"></div>
+                                        </a>
+                                    </div>
+                                    <div class="owl-carousel owl-theme action-menu">
+                                        <div class="item">
+                                            <a href="#" class="ab-link">NIVEL</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#" class="ab-link">HOY</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#" class="ab-link">SEMANA 1</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#" class="ab-link">SEMANA 2</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#" class="ab-link">SEMANA 3</a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="#" class="ab-link">SEMANA 4</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="buttons col-xl-3 col-lg-3 col-md-3 col-sm-4 col-5">
+                                <div class="icon-button">
+                                    <a href="#" class="search-switch" class="red" data-toggle="tooltip" data-placement="bottom" title="Search">
+                                        <div class="lg-icon lg-search-lined"></div>
+                                    </a>
+                                </div>
+                                <div class="icon-button" data-toggle="tooltip" data-placement="bottom" title="Favorites">
+                                    <a href="#" data-toggle="modal" data-target="#filter-modal">
+                                        <div class="lg-icon lg-heart-gray"></div>
+                                    </a>
+                                </div>
+                                <div class="icon-button">
+                                    <a href="#" class="filter-switch" data-toggle="tooltip" data-placement="bottom" title="Filter Content">
+                                        <div class="lg-icon lg-filter-gray"></div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP -->
+
+                <div class="pl-header pl-margined-header">OTROS PLANES</div>
+
+                <!-- BTN -->
+
+                <div class="plan-wide-button">
+                    <div class="pbs-item">
+                        <div class="content">
+                            <div class="title">PLAN BASICO</div>
+                            <div class="sub-title">NO DEJES PARA MANANA TU CAMBIO</div>
+                            <div class="price-number">6,99 €</div>
+                            <a href="#" class="btn btn-primary">WERMAS</a>
+                        </div>
+                        <div class="image">
+                            <img src="img/plan-slider-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BTN -->
+
+                <div class="plan-wide-button">
+                    <div class="pbs-item">
+                        <div class="content">
+                            <div class="title">PLAN BASICO</div>
+                            <div class="sub-title">NO DEJES PARA MANANA TU CAMBIO</div>
+                            <div class="price-number">6,99 €</div>
+                            <a href="#" class="btn btn-primary">WERMAS</a>
+                        </div>
+                        <div class="image">
+                            <img src="img/plan-slider-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BTN -->
+
+                <div class="plan-wide-button">
+                    <div class="pbs-item">
+                        <div class="content">
+                            <div class="title">PLAN BASICO</div>
+                            <div class="sub-title">NO DEJES PARA MANANA TU CAMBIO</div>
+                            <div class="price-number">6,99 €</div>
+                            <a href="#" class="btn btn-primary">WERMAS</a>
+                        </div>
+                        <div class="image">
+                            <img src="img/plan-slider-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BTN -->
+
+                <div class="plan-wide-button">
+                    <div class="pbs-item">
+                        <div class="content">
+                            <div class="title">PLAN BASICO</div>
+                            <div class="sub-title">NO DEJES PARA MANANA TU CAMBIO</div>
+                            <div class="price-number">6,99 €</div>
+                            <a href="#" class="btn btn-primary">WERMAS</a>
+                        </div>
+                        <div class="image">
+                            <img src="img/plan-slider-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- E:CONTENT -->
+
+      </div>
+    </section>
+
+@endsection

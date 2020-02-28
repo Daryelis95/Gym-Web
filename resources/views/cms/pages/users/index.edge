@@ -1,0 +1,74 @@
+@layout('cms/layouts/main')
+
+@section('content')
+
+<section class="main-content-wrapper">
+    <div class="flex-box-wrapper">
+
+        @include('cms/pages/users/part-topbar')
+
+        <div class="table-container">
+            <table class="table table-consended">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Created At</th>
+                        <th class="text-right">Proccess</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @each(user in users.data)
+
+                    <tr>
+                        <td><strong>{{ $loop.index + 1 }}</strong></td>
+                        <td><strong>{{ user.name + ' ' + user.surname }}</strong></td>
+                        <td>{{ user.email }}</td>
+                        <td><span class="badge {{ user.gender == 'female' ? 'badge-success' : 'badge-secondary' }}">{{ user.gender }}</span></td>
+                        <td class="mw-25"><div class="fw-300 mw-300">{{ humanDate(user.created_at) }}</div></td>
+
+                        <td class="buttons-td">
+                            @if(auth.user.roles[0] == 'admin')
+                            <a data-href="{{ route('cms.users', { id : user._id, method: 'delete' }) }}" class="table-button remove-btn confirm-btn">
+                                <span class="fa fa-times"></span>
+                            </a>
+                            @endif
+                            <a href="{{ route('cms.users', { id : user._id, method: 'edit' }) }}" class="table-button edit-btn" title="Edit Content">
+                                <span class="fa fa-pen"></span>
+                            </a>
+                        </td>
+                    </tr>
+
+                    @endeach
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- BOTTOM PAGINATION -->
+
+        <div class="page-bottom">
+
+            <div class="pagination-container">
+                <a href="{{ getPrevPageURL(admins) }}" class="prev-page">
+                    <span class="fa fa-arrow-left"></span>
+                </a>
+                <input type="text" name="current-page" value="{{ admins.page }}">
+                <a href="{{ getNextPageURL(admins) }}" class="next-page">
+                    <span class="fa fa-arrow-right"></span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+@include('cms/pages/users/part-form')
+@include('cms/partials/confirmation')
+
+@endsection

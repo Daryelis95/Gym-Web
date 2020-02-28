@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content="gym, gym virtual, patry jordan" />
+        <meta name="description" content="Gym Virtual | by Party Jordan">
+        <meta name="robots" content="noindex"/>
+        <meta name="theme-color" content="#00b8be">
+
+        <base href="/"/>
+
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="img//favicon.ico" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        <title>Gym Virtual | CMS</title>
+
+        {{ style('../dist/cms.css') }}
+        {{ script('../dist/cms.js?h=7869878121') }}
+
+        <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+        <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    </head>
+    <body class="primary-bg panel-body" dir="ltr">
+
+        @!include('cms/partials/navigation')
+
+        @!section('content')
+
+    </body>
+
+    <script>
+
+    @if(notifications)
+
+        @each(notify in notifications)
+            @if(notify.status == true)
+                $.growl.notice({ message: "{{ notify.message }}" });
+            @endif
+
+            @if(notify.status == false)
+                $.growl.error({ message: "{{ notify.message }}" });
+            @endif
+        @endeach
+
+    @endif
+
+    </script>
+
+</html>

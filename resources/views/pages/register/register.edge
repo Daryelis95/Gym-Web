@@ -1,0 +1,144 @@
+@layout('layouts/main')
+
+@section('content')
+
+    <section class="page-content">
+        <div class="container">
+
+            <div class="content-wrapper col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12 offset-xl-3 offset-lg-2 offset-md-0">
+
+                <div class="content-seperator"></div>
+
+                <div class="register-box">
+                    <div class="regbox-header">
+                        <span>SIGN UP</span>
+                    </div>
+                    <form name="register-form" method="post" action="{{ route('register') }}" class="gym-form">
+                        <div class="gym-input-element {{ hasErrorFor('name') ? 'alerted-control' : '' }}">
+                            <div class="label-holder">
+                                <span>First Name</span>
+                            </div>
+                            <div class="input-holder">
+                                <input type="text" name="name" value="{{ old('name') }}" placeholder="Your First Name" required>
+                            </div>
+                            @if(hasErrorFor('name'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('name') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="gym-input-element {{ hasErrorFor('surname') ? 'alerted-control' : '' }}">
+                            <div class="label-holder">
+                                <span>Last Name</span>
+                            </div>
+                            <div class="input-holder">
+                                <input type="text" name="surname" value="{{ old('surname') }}" placeholder="Your Last Name" required>
+                            </div>
+                            @if(hasErrorFor('surname'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('surname') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="gym-input-element {{ hasErrorFor('email') ? 'alerted-control' : '' }}">
+                            <div class="label-holder">
+                                <span>Email Address</span>
+                            </div>
+                            <div class="input-holder">
+                                <input type="email" name="email" value="{{ old('email') }}" placeholder="Your Email Address" required>
+                            </div>
+                            @if(hasErrorFor('email'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('email') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="gym-input-element {{ hasErrorFor('password') ? 'alerted-control' : '' }}">
+                            <div class="label-holder">
+                                <span>Password</span>
+                            </div>
+                            <div class="input-holder password-input">
+                                <input type="password" name="password" value="{{ old('password') }}" placeholder="Password" required>
+                            </div>
+                            @if(hasErrorFor('password'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('password') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="gym-input-element {{ hasErrorFor('password_confirmation') ? 'alerted-control' : '' }}">
+                            <div class="label-holder">
+                                <span>Password (Repeat)</span>
+                            </div>
+                            <div class="input-holder password-input">
+                                <input type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Password" required>
+                            </div>
+                            @if(hasErrorFor('password_confirmation'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('password_confirmation') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="gym-input-element">
+                            <div class="label-holder">
+                                <span>Select Gender</span>
+                            </div>
+                            <div class="input-holder">
+                                <div class="btn-group btn-group-toggle gym-radio-buttons" data-toggle="buttons">
+                                    <label class="btn btn-gym {{ old('gender') == 'male' ? 'active' : '' }}">
+                                        <input type="radio" name="gender" id="male" value="male" autocomplete="off" {{ old('gender') == 'male' ? 'checked' : '' }}>
+                                        <span class="la la-male"></span>
+                                        <span>Male</span>
+                                    </label>
+                                    <label class="btn btn-gym {{ old('gender') == 'female' ? 'active' : '' }}">
+                                        <input type="radio" name="gender" id="female" value="female" autocomplete="off" {{ old('gender') == 'female' ? 'checked' : '' }}>
+                                        <span class="la la-female"></span>
+                                        <span>Female</span>
+                                    </label>
+                                </div>
+                            </div>
+                            @if(hasErrorFor('gender'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('gender') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                        <div class="gym-input-element {{ hasErrorFor('aggrement') ? 'alerted-control' : '' }}">
+                            <div class="label-holder">
+                                <span>Agreement</span>
+                            </div>
+                            <div class="input-holder">
+                                <div class="gym-check">
+                                    <div class="input-holder">
+                                        <input type="checkbox" name="aggrement" value="check" {{ old('aggrement') ? 'checked' : '' }}>
+                                    </div>
+                                    <div class="text-holder">
+                                        <span>Yes, I agree to the <strong>Terms and Conditions</strong> and <strong>GymVirtual’s Privacy Policy</strong> as well as the <strong>Credit Check.</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{ csrfField() }}
+
+                        <div class="gym-button-element">
+                            <button type="submit" class="gym-submit">
+                                <span>SIGN UP</span>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+@endsection

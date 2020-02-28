@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="keywords" content="gym, gym virtual, patry jordan" />
+        <meta name="description" content="Gym Virtual | by Party Jordan">
+        <meta name="robots" content="noindex"/>
+        <meta name="theme-color" content="#00b8be">
+
+        <base href="/"/>
+
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="img//favicon.ico" />
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+        <title>Gym Virtual | by Patry Jordan</title>
+        
+        {{ style('../dist/cms.css') }}
+        {{ script('../dist/cms.js?h=7869878121') }}
+
+
+        {{ style('css/bootstrap.min') }}
+        {{ style('css/perfil-style/main') }}
+        {{ style('css/line-awesome.min') }}
+        {{ style('js/fullcalendar/core/main') }}
+        {{ style('js/fullcalendar/daygrid/main') }}
+        {{ style('js/fullcalendar/timegrid/main') }}
+        {{ style('js/fullcalendar/list/main') }}
+        {{ style('css/owl.carousel.min') }}
+        {{ style('css/datepicker.min') }}
+        {{ style('css/default') }}
+
+
+        <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+        <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    </head>
+    <body class="primary-bg">
+
+        @include('partials/header')
+
+        @!section('content')
+
+        @include('partials/footer')
+        @include('partials/mobile-navigation')
+
+    </body>
+
+    {{ script('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js') }}
+
+    {{ script('https://code.jquery.com/jquery-3.4.1.slim.min.js') }}
+
+    {{ script('https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js') }}
+
+    {{ script('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js') }}
+
+    {{ script('https://momentjs.com/downloads/moment.js') }}
+    {{ script('js/chart') }}
+
+    {{ script('js/jquery-3.3.1.min') }}
+    {{ script('js/popper.min') }}
+    {{ script('js/bootstrap.bundle.min') }}
+    {{ script('js/bootstrap.min') }}
+    {{ script('js/fullcalendar/packages/core/main') }}
+    {{ script('js/fullcalendar/packages/core/locales-all') }}
+    {{ script('js/fullcalendar/packages/interaction/main') }}
+    {{ script('js/fullcalendar/packages/daygrid/main') }}
+    {{ script('js/fullcalendar/packages/list/main') }}
+    {{ script('js/owl.carousel.min') }}
+    {{ script('js/datepicker.min') }}
+    {{ script('js/i18n/datepicker.es') }}
+    {{ script('js/main') }}
+    {{ script('js/moment') }}
+
+
+</html>

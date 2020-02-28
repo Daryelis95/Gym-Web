@@ -1,0 +1,133 @@
+
+<aside class="main-navigation">
+
+    <div class="navigation-logo">
+        <img src="{{ assetsUrl('cms/img/logo.png') }}" />
+    </div>
+
+    <!--
+    <div class="navigation-image-holder">
+        <div class="user-image">
+            <img src="#" />
+        </div>
+        <div class="user-name"><span>{{ auth.user.username }}</span> : {{ auth.user.roles[0] }}</div>
+    </div>
+    -->
+
+    <div class="inner-navigation">
+
+        <a href="{{ route('cms.dashboard') }}" class="nav-element {{ isActiveRoute('/cms/dashboard', 'active') }}">
+            <span class="icon fa fa-dashboard"></span>
+            <span class="text">Dashboard</span>
+        </a>
+
+        <a href="{{ route('cms.users') }}" class="nav-element {{ isActiveRoute('/cms/users', 'active') }}">
+            <span class="icon fa fa-users"></span>
+            <span class="text">Users</span>
+        </a>
+
+        <!-- Nutricions Group -->
+            
+        <div class="nav-element-group {{ isActiveRoute('/cms/nutricions/(.*)', 'opened')  }}">
+    
+            <div class="neg-button">
+                <a href="{{ route('cms.nutricions.crearmenu') }}" class="nav-element {{ isActiveRoute('/cms/nutricions/(.*)', 'active') }}">
+                    <span class="icon fa fa-leaf"></span>
+                    <span class="text">Nutricions</span>
+                </a>
+            </div>
+
+            <div class="neg-elements">
+                <a href="{{ route('cms.nutricions.crearmenu') }}" class="nav-element {{ isActiveRoute('/cms/nutricions/crearmenu', 'active') }}">
+                    <span class="icon fa fa-list"></span>
+                    <span class="text">Menu</span>
+                </a>
+            </div>
+
+            <div class="neg-elements">
+                <a href="{{ route('cms.nutricions.menu.categories') }}" class="nav-element {{ isActiveRoute('/cms/nutricions/menu-categories', 'active') }}">
+                    <span class="icon fa fa-th"></span>
+                    <span class="text">Menu Categories</span>
+                </a>
+            </div>
+
+            <div class="neg-elements">
+                <a href="{{ route('cms.nutricions.recetas') }}" class="nav-element {{ isActiveRoute('/cms/nutricion/recetas', 'active') }}">
+                    <span class="icon fa fa-list"></span>
+                    <span class="text">Recetas</span>
+                </a>
+            </div>
+
+            <div class="neg-elements">
+                <a href="{{ route('cms.nutricions.recetas.categories') }}" class="nav-element {{ isActiveRoute('/cms/nutricion/receta-categories', 'active') }}">
+                    <span class="icon fa fa-th"></span>
+                    <span class="text">Receta Categories</span>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- !End:Nutricions Group -->
+
+        <a href="{{ route('cms.plannes') }}" class="nav-element {{ isActiveRoute('/cms/plannes', 'active') }}">
+            <span class="icon fa fa-clock"></span>
+            <span class="text">Plannes</span>
+        </a>
+
+        <a href="{{ route('cms.subscriptions') }}" class="nav-element {{ isActiveRoute('/cms/subscriptions', 'active') }}">
+            <span class="icon fa fa-table"></span>
+            <span class="text">Subscriptions</span>
+        </a>
+
+        <!-- Learning Group -->
+        
+        <div class="nav-element-group {{ isActiveRoute('/cms/learning/(.*)', 'opened')  }}">
+
+            <div class="neg-button">
+                <a href="{{ route('cms.learning.blog') }}" class="nav-element {{ isActiveRoute('/cms/learning/(.*)', 'active') }}">
+                    <span class="icon fa fa-book"></span>
+                    <span class="text">Learning</span>
+                </a>
+            </div>
+
+            <div class="neg-elements">
+                <a href="{{ route('cms.learning.blog') }}" class="nav-element {{ isActiveRoute('/cms/learning/blog', 'active') }}">
+                    <span class="icon fa fa-th"></span>
+                    <span class="text">Blog</span>
+                </a>
+            </div>
+
+            <div class="neg-elements">
+                <a href="{{ route('cms.learning.podcasts.categories') }}" class="nav-element {{ isActiveRoute('/cms/learning/podcasts-categories', 'active') }}">
+                    <span class="icon fa fa-th"></span>
+                    <span class="text">Podcasts Categories</span>
+                </a>
+            </div>
+
+        </div>
+    
+        <!-- !End:learning Group -->
+      
+
+        <!--
+        <div class="nav-element">
+            <span class="icon fa fa-box-open"></span>
+            <span class="text"></span>
+
+            <div class="sub-menu">
+                <a class="nav-element">
+                    <span class="icon fa fa-chevron-right"></span>
+                    <span class="text"></span>
+                </a>
+            </div>
+        </div>
+        -->
+
+        <a href="{{ route('cms.login') }}" class="nav-element logout">
+            <span class="icon fa fa-arrow-left"></span>
+            <span class="text">Sign Out</span>
+        </a>
+
+    </div>
+
+</aside>

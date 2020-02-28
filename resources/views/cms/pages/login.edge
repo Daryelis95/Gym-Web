@@ -1,0 +1,60 @@
+@layout('cms/layouts/login')
+
+@section('content')
+
+<section class="login-page-wrapper">
+    <form name="login-form" method="post" class="login-panel" action="{{ route('cms.login') }}">
+
+        <div class="lp-logo-container">
+            <img src="{{ assetsUrl('cms/img/logo.png') }}" alt="Gym Virtual | CMS"/>
+        </div>
+
+        <div class="lp-inner">
+            <div class="login-form-container">
+
+                <div class="form-group">
+                    <div class="icon">
+                        <span class="fa fa-user"></span>
+                    </div>
+                    <input type="text" name="username" value="{{ old('username') }}" placeholder="Username" required minlength="4" maxlength="255"/>
+                    @if(hasErrorFor('username'))
+                    <div class="warning-icon">
+                        <span class="fa fa-exclamation"></span>
+                    </div>
+                    @endif
+                </div>
+
+                <div class="form-group">
+                    <div class="icon">
+                        <span class="fa fa-lock"></span>
+                    </div>
+                    <input type="password" name="password" value="{{ old('password') }}" placeholder="Password" required minlength="5" maxlength="32"/>
+                    @if(hasErrorFor('password'))
+                    <div class="warning-icon">
+                        <span class="fa fa-exclamation"></span>
+                    </div>
+                    @endif
+                </div>
+
+                {{ csrfField() }}
+
+            </div>
+        </div>
+
+        @if(flashMessage('failed'))
+        <div class="lp-result-container">
+            <div class="alert alert-danger">
+                <span class="fa fa-info"></span>
+                <span>{{ flashMessage('failed') }}</span>
+            </div>
+        </div>
+        @endif
+
+        <div class="lp-button-container">
+            <input type="submit" value="Sign In" />
+        </div>
+
+    </form>
+</section>
+
+@endsection

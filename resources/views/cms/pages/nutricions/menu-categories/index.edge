@@ -1,0 +1,98 @@
+@layout('cms/layouts/main')
+
+@section('content')
+  
+   <section class="main-content-wrapper">
+      <div class="flex-box-wrapper">
+
+     @include('cms/pages/nutricions/menu-categories/part-topbar')
+
+         <!-- TABLE -->
+        <div class="table-container">
+            <table class="table table-consended">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                       <!-- <th>Users</th>-->
+                        <th>Title</th>
+                        <th>Desayuno</th>
+                        <th>Media Tarde</th>
+                        <th>Cena</th>
+                        <th>Status</th>
+                        <th>Image</th>
+                        <th>Created At</th>
+                        <th class="text-right">Proccess</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                  @each(categaria in categorias.data)
+                      
+                    <tr>
+                      <td><strong>{{ $loop.index + 1 }}</strong></td>
+                     <td><strong>{{ categaria.title }}</strong></td>
+                     
+                     <td class="mw-25">
+                      <div class="fw-300 mw-300">{{ echo(categaria.desayuno, 50) }}</div>
+                     </td>
+                     <td class="mw-25">
+                      <div class="fw-300 mw-300">{{ echo(categaria.mediatarde, 50) }}</div>
+                     </td>
+                     <td class="mw-25">
+                      <div class="fw-300 mw-300">{{ echo(categaria.cena, 50) }}</div>
+                     </td>
+
+                     <td>
+                       <span class="badge {{ categaria.status === true ? 'badge-success' : 'badge-secondary' }}">
+                       {{ categaria.status === true ? 'Active' : 'Passive' }}
+                       </span>
+                     </td>
+                     <td class="mw-25">
+                        <img src="{{ categaria.file }}" width="100px">
+                    </td>
+
+                     <td class="mw-25">
+                       <div class="fw-300 mw-300">{{ humanDate(categaria.created_at) }}</div>
+                     </td>
+    
+                     <td class="buttons-td">
+                         @if(auth.user.roles[0] == 'admin')
+                         <a data-href="{{ route('cms.nutricions.menu.categories', { id : categaria._id, method: 'delete' }) }}" class="table-button remove-btn confirm-btn">
+                            <span class="fa fa-times"></span>
+                        </a>
+                         @endif
+                         <a href="{{ route('cms.nutricions.menu.categories', { id : categaria._id, method: 'edit' }) }}" class="table-button edit-btn" title="Edit Content">
+                            <span class="fa fa-pen"></span>
+                         </a>
+                         
+                     </td>
+                    </tr>
+
+                  @endeach
+                </tbody>
+            </table>
+
+        </div>
+
+        <!-- BOTTOM PAGINATION -->
+        <div class="page-bottom">
+
+           <div class="pagination-container">
+                <a href="{{ getPrevPageURL(categorias) }}" class="prev-page">
+                    <span class="fa fa-arrow-left"></span>
+                </a>
+                <input type="text" name="current-page" value="{{ categorias.page }}">
+                <a href="{{ getNextPageURL(categorias) }}" class="next-page">
+                    <span class="fa fa-arrow-right"></span>
+                 </a>
+            </div>
+    
+        </div>
+
+      </div>
+   </section>
+   
+   @include('cms/pages/nutricions/menu-categories/part-form')
+   @include('cms/partials/confirmation')
+ 
+@endsection

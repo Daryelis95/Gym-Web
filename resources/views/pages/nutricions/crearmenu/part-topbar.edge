@@ -1,0 +1,24 @@
+
+<!-- Page Top Navigation -->
+
+<div class="">
+
+    <div class="button-container">
+        @if(edit)
+        <a href="{{ route('nutricions.createMenu') + '?modal=true' }}" data-dismiss="modal" class="add-button">
+            <span>CREA TU NUEVO PLAN DE ALIMENTACION  <span class="la la-plus"></span></span>
+            
+        </a>
+        @endif
+
+        @if(!edit)
+        <a href="#" data-dismiss="modal" class="add-button" data-toggle="modal" data-target="#add-clear-menu-modal">
+            <span>CREA TU NUEVO PLAN DE ALIMENTACION <span class="la la-plus"></span> </span>
+        </a>
+        @endif
+
+    </div>
+
+</div>
+
+<!-- E:Page Top Navigation -->

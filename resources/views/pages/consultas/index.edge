@@ -1,0 +1,151 @@
+@layout('layouts/main')
+
+@section('content')
+
+    @include('pages/consultas/partials/subnavigation')
+
+    <section class="white-header">
+        <div class="container">
+            <div class="w-header">PLAN VEGETARIANO</div>
+        </div>
+    </section>
+
+    <!-- PAGE CONTENT -->
+
+    <section class="page-content secondary-bg">
+        <div class="container">
+            <div class="content-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                <div class="plan-content">
+                    <div class="plan-header">
+                        <div class="ch-row">QUIERES MEAJORAR <span>TUS HABITOS?</span></div>
+                        <div class="ch-row">QUIERES <span>APPENDER A COMER MEJOR?</span></div>
+                    </div>
+                    <div class="plan-image">
+                        <img src="img/plan-top.png" alt="">
+                    </div>
+                    <div class="plan-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="plan-price">
+                        <div class="title">PAGO UNICO</div>
+                        <div class="number">69 €</div>
+                        <a href="#" class="btn btn-primary">COMPRAR AHORA</a>
+                    </div>
+                    <div class="plan-content-2-col">
+                        <div class="text">
+                            <div class="title">PLAN DE ALIMENTACION 12 SEMANAS</div>
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</li>
+                                <li>Ut enim ad minim veniam, quis nostrud exercitation.</li>
+                                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+                            </ul>
+                        </div>
+                        <div class="image">
+                            <img src="img/plan-bottom.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="plan-slider secondary-bg">
+        <div class="container">
+
+            <div class="plan-bottom-slider">
+                <div class="owl-carousel owl-theme plan-bottom-carousel">
+                    <div class="item">
+
+                        <div class="pbs-item">
+                            <div class="content">
+                                <div class="title">SUBSCRIBETE</div>
+                                <div class="sub-title">NO DEJES PARA MANANA TU CAMBIO</div>
+                                <div class="price-title">SUSCRIPTION BASICA</div>
+                                <div class="price-number">6,99 € / MES</div>
+                                <a href="#" class="btn btn-primary">SUSCRIBITE AHORA</a>
+                                <div class="semana-number">1,74 € LA SEMANA</div>
+                            </div>
+                            <div class="image">
+                                <img src="img/plan-slider-1.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+
+                        <div class="pbs-item">
+                            <div class="content">
+                                <div class="title">SUBSCRIBETE</div>
+                                <div class="sub-title">NO DEJES PARA MANANA TU CAMBIO</div>
+                                <div class="price-title">SUSCRIPTION BASICA</div>
+                                <div class="price-number">6,99 € / MES</div>
+                                <a href="#" class="btn btn-primary">SUSCRIBITE AHORA</a>
+                                <div class="semana-number">1,74 € LA SEMANA</div>
+                            </div>
+                            <div class="image">
+                                <img src="img/plan-slider-1.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- MOBILE NAV -->
+
+    <section class="mobile-navigation">
+        <div class="close-button">
+            <a href="#">
+                <span class="la la-arrow-left"></span>
+            </a>
+        </div>
+        <div class="inner-wrapper">
+
+            <div class="account-info-holder">
+                <div class="mobile-account-info">
+                    <div class="mba-picture-holder">
+                        <a href="#" class="mba-picture">
+                            <!-- <img src="" alt=""> -->
+                            <span>S.A.</span>
+                        </a>
+                    </div>
+                    <div class="mba-info-holder">
+                        <div class="name">Sabri Ayeş</div>
+                        <div class="email">sabri@qode.com</div>
+                        <a href="#" class="logout"><span class="la la-sign-out"></span>Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-holder">
+                <div class="mobile-nav">
+                    <div class="nav-element active-element">
+                        <a href="#"><span>NUTRICION</span></a>
+                    </div>
+                    <div class="nav-element">
+                        <a href="#"><span>WORKOUT</span></a>
+                    </div>
+                    <div class="nav-element">
+                        <a href="#"><span>AREA APRENDIZAJE</span></a>
+                    </div>
+                    <div class="nav-element">
+                        <a href="#"><span>COMUNIDAD</span></a>
+                    </div>
+                    <div class="nav-element last-element">
+                        <a href="#"><span>SHOP</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+@endsection

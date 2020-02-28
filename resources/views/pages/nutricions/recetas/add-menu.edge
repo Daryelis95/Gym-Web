@@ -1,0 +1,87 @@
+
+<!-- Form -->
+
+<div class="modal fade" id="add-menu-modal" tabindex="-1" role="dialog" aria-labelledby="add-menu-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ edit ? 'Edit learning  : ' + edit.title : 'AÑADIR RECETA' }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 content-title-menu">
+                        
+                            <button class="menu-titulos" ><strong>AÑADIR RECETA</strong></button>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xl-6 content-title-menu">
+                        @if(edit)
+                        <a href="{{ route('test.index') + '?modal=true' }}" data-dismiss="modal" class="add-button">
+                           <button class="menu-titulos" ><strong>RECETA PERSONALIZADA</strong></button>
+                        </a>
+                        @endif
+                        @if(!edit)
+                        <a href="#" data-dismiss="modal" class="add-button" data-toggle="modal" data-target="#menu-personal-modal">
+                            <button class="menu-titulos" ><strong>RECETA PERSONALIZADA</strong></button>
+                        </a>
+                         @endif
+                    </div>
+                </div>
+                <p class="menu-p">ESCOGE LA RECETAS QUE QUIERES AÑADIR A TU DESAYUNO</p>
+            </div>
+           
+                @include('pages/test/partials/nav-recetas')
+           <section>
+               <div class="container">
+                   <div class="row">
+                       <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+                           <div class="row">
+                            @each(categoria in categorias.data)
+                            
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4 card" >
+                                    <div class="content-grid-item-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            
+                                        <div class="clear-menu-item">
+                                            <a href="#" class="image-holder">
+                                                <img class="card-img-top" src="{{ assetsUrl(categoria.file) }}" alt=""/>
+                                            </a>
+                                
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-text"> {{ categoria.desayuno}}</h5>
+                                            <h6 class="card-title">{{ categoria.title }} </h6>
+                                            <a href="{{ route('nutricions.crearMenu') }}"  type="submit" class="btn btn-primary boton-center">Select</a>
+                                        </div>
+                                            
+                                    </div>
+                                </div>
+                            
+                            @endeach
+
+                          
+                               
+                           </div>
+                       </div>
+                       
+                   </div>
+                  
+               </div>
+                
+           </section>
+        </div>
+    </div>
+</div>
+
+@if(flashMessage('form') || edit || request.input('modal'))
+<script>
+
+    $(document).ready(function() {
+        $('#add-menu-modal').modal('show');
+    });
+
+</script>
+@endif
+
+<!-- E:Form -->

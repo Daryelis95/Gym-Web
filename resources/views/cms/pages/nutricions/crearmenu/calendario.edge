@@ -1,0 +1,68 @@
+<html>
+   <head>
+      <title>MomentJS - Working Example</title>
+      <script type = "text/JavaScript" src = "https://MomentJS.com/downloads/moment.js"></script>
+     
+   </head>
+   <body>
+    
+         <div class="form-group panel-form-group" name="f1" id="f1">
+
+            <div class="form-col col-lg-3 col-md-3 col-sm-3 col-xs-6 {{ hasErrorFor('fechas') ? 'alerted-control' : '' }}">
+                <label for="fecha">Fecha</label>
+                <input type="date" name="fecha" id="fecha" required onchange="diaSemana();" value="{{ old('cena', edit.cena) }}" placeholder="fecha">
+
+                @if(hasErrorFor('fecha'))
+                <div class="control-alert">
+                    <span class="fa fa-times"></span>
+                    <span>{{ getErrorFor('fecha') }}</span>
+                </div>
+                @endif
+                
+            </div> 
+
+            <div class="form-col col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <label for="mes">Mes</label>
+                <input type="text" name="mes" id="mes">
+            </div> 
+
+             <div class="form-col col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <label for="semanas">Semana</label>
+                <input type="text" name="semanas" id="semanas">
+            </div> 
+
+            <div class="form-col col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <label for="dia">Dia</label>
+                <input type="text" name="dia" id="dia">
+            </div> 
+
+         </div>
+          
+ 
+   
+    <script type = "text/JavaScript">
+
+      let dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado","Domingo"];
+      let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+      
+      function diaSemana(){
+        
+        let date  = new Date(document.getElementById("fecha").value);
+        let fechaNum = date.getUTCDate();
+        let mes_name = date.getMonth();
+        let semana = ((date.getUTCDate()+1)/7);
+        let semanaR= Math.ceil(semana);
+
+
+      document.f1.dia.value = fechaNum
+      document.f1.mes.value = meses[mes_name]
+      document.f1.semanas.value = semanaR
+ 
+     }
+
+
+
+
+    </script>
+   </body>
+</html>

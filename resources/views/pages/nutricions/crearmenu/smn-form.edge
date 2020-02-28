@@ -1,0 +1,63 @@
+<div class="modal fade" id="add-clear-menu-modal" tabindex="-1" role="dialog" aria-labelledby="add-clear-menu-modal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <form name="add-form" action="{{ route('nutricions.createMenu') }}" method="post" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="add-clear-menu-modal">AÑADIR SEMANA</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="la la-remove"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="realize-form">
+                    <div class="rf-textarea {{ hasErrorFor('semana') ? 'alerted-control' : '' }}">
+                        <label for="semana" class="header">SEMANA</label>
+
+                        <select id="semana" name="semana" class="semanas" value="{{ old('semana', edit.semana) }}">
+                            <option value="1" class="semanas">SEMANA 1</option>
+                            <option value="2" class="semanas">SEMANA 2</option>
+                            <option value="3" class="semanas">SEMANA 3</option>
+                            <option value="4" class="semanas">SEMANA 4</option>
+                        </select>
+                       
+                    </div>
+                    @if(hasErrorFor('semana'))
+                        <div class="control-alert">
+                            <span class="fa fa-times"></span>
+                            <span>{{ getErrorFor('semana') }}</span>
+                        </div>
+                    @endif
+
+                    @each(menu in menus.data)
+                        @if(menu < 2)
+                          <input type="text" value="{{(menu.semana)}}">
+                            
+                        @endif
+                    @endeach
+                    
+                </div>
+                {{ csrfField() }}
+                    @if(edit)
+                        <input type="hidden" name="id" value="{{ edit._id }}"/>
+                    @endif
+            </div>
+            <div class="modal-footer">
+                
+                @if(!edit)
+                      <button type="submit" for="content-form" class="btn btn-primary float-right"><span class="fa fa-save"></span>Añadir</button>
+                  @else
+                      <button type="submit" for="content-form" class="btn btn-primary float-right"><span class="fa fa-edit"></span> Edit Menu</button>
+                     
+                  @endif
+            </div>
+        </form>
+    </div>
+</div>
+@if(flashMessage('form') || edit || request.input('modal'))
+<script>
+
+    $(document).ready(function() {
+        $('#add-clear-menu-modal').modal('show');
+    });
+
+</script>
+@endif

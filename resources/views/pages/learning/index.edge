@@ -1,0 +1,69 @@
+@layout('layouts/main')
+@section('content')
+    @include('pages/learning/partials/subnavigation')
+    @include('pages/learning/partials/actionbar')
+
+    <section class="page-content">
+        <div class="container">
+
+            <div class="content-wrapper col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
+                @each(learning in learnings.data)
+                  <div class="content-seperator"></div>
+
+                   <div class="ap-blog-list">
+
+                        <!-- ROW -->
+    
+                        <a href="{{route('learning.index')}}" class="ap-blog-row">
+                            <div class="image-wrapper">
+                               <img src="{{assetsUrl(learning.file)}}" alt="img category">
+                            <!--<img src= "{{assetsUrl('uploads/learning'+learning.file)}}"/>-->
+                            </div>
+                            <div class="content-wrapper">
+                                <div class="content-holder">
+                                  <div class="top-title">{{learning.title}}</div>
+                                  <div class="main-title">{{learning.maintitle}}</div>
+                                  <div class="date-label">{{learning.created_at}}</div>
+                                  <div class="text">
+                                    <p>{{learning.description}}</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </a>
+    
+                  </div>
+                @endeach
+            </div>
+
+            <aside class="page-aside-bar col-xl-3 col-lg-4 col-md-4 col-sm-4 col-12">
+
+                    <div class="aside-embed">
+                        <iframe style="height: 80px;" src="https://embed.spotify.com/?uri=spotify%3Auser%3Ablancoynegromusic%3Aplaylist%3A25sV9fH1SOKvZb6X2R2uRV&theme=white&view=coverart"></iframe>
+                    </div>
+    
+                    <div class="aside-image">
+                        <a href="#">
+                            <img src="img/sample-3.png" alt="">
+                        </a>
+                    </div>
+    
+                    <div class="aside-image" style="border: 1px solid #eee;">
+                        <a href="#">
+                            <img src="img/sample-2.png" alt="">
+                        </a>
+                    </div>
+    
+                    <div class="aside-image">
+                        <a href="#">
+                            <img src="img/sample-1.png" alt="">
+                        </a>
+                    </div>
+    
+            </aside>
+
+        </div>
+    </section>
+
+
+@endsection
+

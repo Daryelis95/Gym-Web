@@ -1,0 +1,292 @@
+
+<!-- Form -->
+
+<div class="modal fade" id="content-form-modal" tabindex="-1" role="dialog" aria-labelledby="content-form-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <form class="modal-content"  method="post" action="{{ route('cms.nutricions.recetas') }}" enctype="multipart/form-data">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ edit ? 'Edit Content : ' + edit.title : 'Add Content' }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="modal-body-section">
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-12 col-md-12 col-sm-12 col-xs-12 {{ hasErrorFor('title') ? 'alerted-control' : '' }}">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" value="{{ echo(old('title', edit.title)) }}" placeholder="Title" required maxlength="255"/>
+
+                            @if(hasErrorFor('title'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('title') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('category_id') ? 'alerted-control' : '' }}">
+                            <label for="category_id">Category</label>
+                            <div class="select">
+                                <select name="category_id">
+                                    <option value="" selected disabled>Choose Category</option>
+
+                                    @each(category in categories)
+                                    <option value="{{ category._id }}" {{ old('category_id', edit.category_id) == category._id ? 'selected' : null }}>{{ category.title }}</option>
+                                    @endeach
+
+                                </select>
+                                <div class="arrow"></div>
+                            </div>
+
+                            @if(hasErrorFor('category_id'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('category_id') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label for="file">Image
+                                @if(edit.image)
+                                <a href="{{ assetsUrl('uploads/' + edit.image) }}" target="_blank" class="badge badge-secondary">Download</a>
+                                @endif
+                            </label>
+                            <div class="file-upload-box">
+                                <div class="file-status">
+                                    <span class="fa fa-upload"></span>
+                                </div>
+                                <div class="file-content">
+                                    <span class="file-name">Select File</span>
+                                </div>
+                                <input type="file" name="file" accept=".jpg,.png,.jpeg"/>
+                                <a class="file-clear">
+                                    <span class="fa fa-times"></span>
+                                </a>
+                            </div>
+
+                            @if(hasErrorFor('file'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('file') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('tags') ? 'alerted-control' : '' }}">
+                            <label for="tags">Tags</label>
+                            <input type="text" name="tags" value="{{ echo(old('tags', edit.tags)) }}" placeholder="enter, some, tags..." maxlength="255"/>
+
+                            @if(hasErrorFor('tags'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('tags') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('description') ? 'alerted-control' : '' }}">
+                            <label for="description">Description</label>
+                            <input type="text" name="description" value="{{ echo(old('description', edit.description)) }}" placeholder="Short Description"/>
+
+                            @if(hasErrorFor('description'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('description') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-12 {{ hasErrorFor('time') ? 'alerted-control' : '' }}">
+                            <label for="time">Time</label>
+                            <input type="text" name="time" value="{{ echo(old('time', edit.time)) }}" placeholder="00:05" maxlength="5"/>
+
+                            @if(hasErrorFor('time'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('time') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-12 {{ hasErrorFor('serving') ? 'alerted-control' : '' }}">
+                            <label for="serving">Serving</label>
+                            <input type="text" name="serving" value="{{ old('serving', edit.serving) }}" placeholder="1" maxlength="2"/>
+
+                            @if(hasErrorFor('serving'))
+                            <div class="control-alert">
+                                <span class="fa fa-serving"></span>
+                                <span>{{ getErrorFor('serving') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-4 col-md-4 col-sm-4 col-xs-12 {{ hasErrorFor('difficult') ? 'alerted-control' : '' }}">
+                            <label for="difficult">Difficult</label>
+                            <div class="select">
+                                <select name="difficult">
+                                    <option value="" selected disabled>Choose Level</option>
+                                    <option value="easy" {{ old('difficult', edit.difficult) == 'easy' ? 'selected' : null }}>Easy</option>
+                                    <option value="easy" {{ old('difficult', edit.difficult) == 'normal' ? 'selected' : null }}>Normal</option>
+                                    <option value="easy" {{ old('difficult', edit.difficult) == 'hard' ? 'selected' : null }}>Hard</option>
+                                </select>
+                                <div class="arrow"></div>
+                            </div>
+
+                            @if(hasErrorFor('difficult'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('difficult') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="form-group panel-form-group has-textarea">
+                        <div class="form-col col-lg-12 col-md-12 col-sm-12 col-xs-12 {{ hasErrorFor('ingredients') ? 'alerted-control' : '' }}">
+                            <textarea name="ingredients" id="rte-editor" placeholder="Ingredients">{{ echo(old('ingredients', edit.ingredients)) }}</textarea>
+
+                            @if(hasErrorFor('ingredients'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('ingredients') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    -->
+
+                    <div class="form-group panel-form-group has-textarea">
+                        <div class="form-col col-lg-12 col-md-12 col-sm-12 col-xs-12 {{ hasErrorFor('preparation') ? 'alerted-control' : '' }}">
+                            <textarea name="preparation" id="rte-editor" placeholder="Preparation">{{ echo(old('preparation', edit.preparation)) }}</textarea>
+
+                            @if(hasErrorFor('preparation'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('preparation') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group panel-form-group has-textarea">
+                        <div class="form-col col-lg-12 col-md-12 col-sm-12 col-xs-12 {{ hasErrorFor('tips') ? 'alerted-control' : '' }}">
+                            <textarea name="tips" id="rte-editor" placeholder="Tips">{{ echo(old('tips', edit.tips)) }}</textarea>
+
+                            @if(hasErrorFor('tips'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('tips') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group panel-form-group has-textarea">
+                        <div class="form-col col-lg-12 col-md-12 col-sm-12 col-xs-12 {{ hasErrorFor('fact') ? 'alerted-control' : '' }}">
+                            <textarea name="fact" id="rte-editor" placeholder="Fact">{{ echo(old('fact', edit.fact)) }}</textarea>
+
+                            @if(hasErrorFor('fact'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('fact') }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12 {{ hasErrorFor('youtube_link') ? 'alerted-control' : '' }}">
+                            <label for="youtube_link">YouTube Link</label>
+                            <input type="text" name="youtube_link" value="{{ echo(old('youtube_link', edit.youtube_link)) }}"/>
+
+                            @if(hasErrorFor('type'))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor('content') }}</span>
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="form-col col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label for="status">Status</label>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="status" value="active" name="status" {{ edit.status === true ? 'checked' : '' }} class='ios8-switch ios8-switch-lg'>
+                                <label for="status">Current Status: {{ edit.status === true ? 'Active' : 'Passive' }}</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    @each(option in options)
+                    <div class="form-group panel-form-group">
+                        <div class="form-col col-lg-12 col-md-12 col-sm-12 col-xs-12 {{ hasErrorFor(option.name) ? 'alerted-control' : '' }}">
+                            <label for="types_of_diet">{{ option.title }}</label>
+                            <div class="option-list-input">
+
+                                @each(input in option.options)
+                                <label class="option-box">
+                                    <div class="input-holder">
+                                        <input type="radio" name="{{ input.name }}" value="{{ input.value }}" {{ old(input.name, edit[input.name]) == input.value ? 'checked' : '' }}/>
+                                    </div>
+                                    <div class="text-holder">
+                                        <span>{{ input.text }}</span>
+                                    </div>
+                                </label>
+                                @endeach
+                            </div>
+
+                            @if(hasErrorFor(option.name))
+                            <div class="control-alert">
+                                <span class="fa fa-times"></span>
+                                <span>{{ getErrorFor(option.name) }}</span>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                    @endeach
+
+                    {{ csrfField() }}
+
+                    @if(edit)
+                        <input type="hidden" name="id" value="{{ edit._id }}"/>
+                    @endif
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                @if(!edit)
+                <button type="submit" for="content-form" class="btn btn-primary float-right">
+                    <span class="fa fa-save"></span> Add Content
+                </button>
+                @else
+                <button type="submit" for="content-form" class="btn btn-success float-right">
+                    <span class="fa fa-pen"></span> Edit Content
+                </button>
+                @endif
+            </div>
+        </form>
+    </div>
+</div>
+
+@if(flashMessage('form') || edit || request.input('modal'))
+<script>
+
+    $(document).ready(function() {
+        $('#content-form-modal').modal('show');
+    });
+
+</script>
+@endif
+
+<!-- E:Form -->

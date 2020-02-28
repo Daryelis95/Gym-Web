@@ -1,0 +1,186 @@
+@layout('layouts/main')
+
+@section('content')
+
+    @include('pages/recetas/partials/subnavigation')
+
+    <div class="search-wrapper">
+        <div class="container">
+            <div class="search-input-contianer">
+                <div class="search-input">
+                    <input type="text" name="search" value="" placeholder="Esqurice Equal Para Buscar...">
+                    <a href="#">
+                        <span class="la la-remove"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-content">
+        <div class="container">
+
+            @if(!auth.user)
+            <div class="content-wrapper col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
+            @else
+            <div class="content-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            @endif
+
+                <div class="content-seperator mobile-0"></div>
+
+                <div class="detail-content-wrapper">
+                    <div class="detail-header">
+                        <div class="dh-column col-lx-10 col-lg-9 col-md-12 col-sm-12 col-12">
+                            <h4 class="detail-header-h4">{{ receta.title }}</h4>
+                        </div>
+                        @if(auth.user)
+                        <div class="dh-column col-lx-2 col-lg-3 col-md-12 col-sm-12 col-12">
+                            <div class="dh-buttons">
+                                @if(!receta.like)
+                                <a href="{{ route('nutricions.receta.detail', { slug: receta.slug }) + '?like=true' }}" class="favorite-btn">
+                                    <div class="lg-icon lg-heart-black"></div>
+                                </a>
+                                @else
+                                <a href="{{ route('nutricions.receta.detail', { slug: receta.slug }) + '?like=false' }}" class="favorite-btn">
+                                    <div class="lg-icon lg-heart-fill"></div>
+                                </a>
+                                @endif
+                                <a href="#" class="caledar-btn">
+                                    <div class="lg-icon lg-calendar-add"></div>
+                                </a>
+
+                            </div>
+                        </div>
+                        @endif
+                    </div>
+
+                    <div class="detail-slider">
+                        <!-- SL -->
+
+                        <div id="detail-images" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="{{ assetsUrl('uploads/' + receta.image) }}" class="d-block w-100"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SL -->
+                    </div>
+
+                    <div class="detail-context-field">
+
+                        <div class="context-section pdt-0">
+                            <div class="receta-labels">
+                                <div class="rl-column">
+                                    <div class="rc-icon">
+                                        <div class="lg-icon lg-icon-40x40 lg-time-big"></div>
+                                    </div>
+                                    <div class="rc-text">{{ receta.time }}</div>
+                                </div>
+                                <div class="rl-column">
+                                    <div class="rc-icon">
+                                        <div class="lg-icon lg-icon-40x40 lg-receta-big"></div>
+                                    </div>
+                                    <div class="rc-text">{{ receta.difficult }}</div>
+                                </div>
+                                <div class="rl-column">
+                                    <div class="rc-icon">
+                                        <div class="lg-icon lg-icon-40x40 lg-snack-big"></div>
+                                    </div>
+                                    <div class="rc-text">{{ receta.types_of_diet }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @if(receta.ingredients.length > 0)
+                        <div class="context-section">
+                            <div class="cs-header">
+                                <div class="line"></div>
+                                <div class="span">INGREDIENTES</div>
+                            </div>
+                            <div class="cs-body">
+                                <ul class="ingredient-list">
+                                    @each(ing in receta.ingredients)
+                                    <li>{{ ing.title }}</li>
+                                    @endeach
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="dc-images">
+                            @each(ing in receta.ingredients)
+                            <div class="dc-element col-xl-1 col-lg-2 col-md-3 col-sm-4 col-xs-4">
+                                <a href="#">
+                                    <img src="{{ assetsUrl('uploads/' + ing.image) }}" alt="">
+                                </a>
+                            </div>
+                            @endeach
+                        </div>
+                        @endif
+
+                        <div class="context-section">
+                            <div class="cs-header">
+                                <div class="line"></div>
+                                <div class="span">PREPARACION</div>
+                            </div>
+                            <div class="cs-body">
+                                {{ receta.preparation }}
+                            </div>
+                        </div>
+
+                        <div class="context-section">
+                            <div class="cs-header">
+                                <div class="line"></div>
+                                <div class="span">TIPS</div>
+                            </div>
+                            <div class="cs-body">
+                                {{ receta.tips }}
+                            </div>
+                        </div>
+
+                        <div class="context-section">
+                            <div class="cs-header">
+                                <div class="line"></div>
+                                <div class="span">¿SABÍAS QUE...? </div>
+                            </div>
+                            <div class="cs-body">
+                                {{ receta.fact }}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="prev-and-next">
+                  @if(previousSlug)
+                    <a href="{{ route('nutricions.receta.detail', { slug: previousSlug }) }}" class="prev">
+                      <div class="icon">
+                          <div class="lg-icon lg-icon-40x40 lg-prev"></div>
+                      </div>
+                      <span>VIDEO ANTERIOR</span>
+                    </a>
+                  @endif
+
+                  @if(nextSlug)
+                    <a href="{{ route('nutricions.receta.detail', { slug: nextSlug }) }}" class="next">
+                        <div class="icon">
+                            <div class="lg-icon lg-icon-40x40 lg-next"></div>
+                        </div>
+                        <span>VIDEO SIGUIENTES</span>
+                    </a>
+                  @endif
+                </div>
+            </div>
+
+            @if(!auth.user)
+                @include('partials/asidebar')
+            @endif
+
+        </div>
+
+    </section>
+
+
+@endsection

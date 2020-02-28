@@ -1,0 +1,515 @@
+@layout('layouts/main')
+
+@section('content')
+
+@include('pages/perfil/area-privada-agenda/partials/subnavigation')
+
+<section class="page-content">
+    <div class="container">
+
+        <div class="content-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+            <div class="content-seperator"></div>
+
+            <div class="workout-list">
+
+                <!-- ROW -->
+
+                <div class="wl-row">
+                    <div class="wr-header">
+                        <div class="wr-container">
+                            <div class="wr-title">
+                                <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                                    <div class="card">
+                                        <div class="card-holder" role="tab" id="headingOne1">
+                                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse1" aria-expanded="true"
+                                            aria-controls="collapseOne1">
+                                                <h5 class="mb-0">
+                                                    NUTRICIONS 
+                                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                    <div id="collapse1" class="collapse show mt-5" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                        <div class="wr-body">
+                            <div class="card-body">
+                                <div class="wr-container">
+                                    <div class="wr-content">
+                                        <img src="img/menu-image.png"/>
+                                        
+                                        <div class="inner-content">
+                                            <a href="#" id="first-link">DESAYUNO</a>
+                                            <p class="text-left text-bold">TOSTADA CON HUEVO POCHADO, ESPINAC AS Y TOMATE CHERRY</p>
+                                        </div>
+                                        <div class="wr-buttons">
+                                            <a href="#">VER MAS</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="favorite-icon">
+                                    <div class="lg-icon lg-heart-black"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                     <a href="#" id="nutricions" class="row-button" data-toggle="modal" data-target="#reliaze-modal2">
+                        <div class="btn-container">
+                            <div class="rbtn-text">CONFIGURA TU DIA</div>
+                            <div class="rbtn-icon">
+                               <div class="lg-icon lg-calendar-add"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ROW -->
+
+                <div class="wl-row">
+                    <div class="wr-header">
+                        <div class="wr-container">
+                            <div class="wr-title">
+                                <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                                    <div class="card">
+                                        <div class="card-holder" role="tab" id="headingOne1">
+                                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse2" aria-expanded="true"
+                                            aria-controls="collapseOne1">
+                                                <h5 class="mb-0">
+                                                    ENTRENAMIENTO
+                                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                    <div id="collapse2" class="collapse show mt-5" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                        <div class="wr-body">
+                            <div class="card-body">
+                                <div class="wr-container">
+                                    <div class="wr-content">
+                                        <img src="img/play-1.png"/>
+                                        
+                                        <div class="inner-content">
+                                            <a href="#">2. ELIMINAR GRASA DE LA ESPALDA</a>
+                                            <ul>
+                                                <li>
+                                                    <div class="meta-li">
+                                                        <div class="meta-title">TIEMPO</div>
+                                                        <div class="meta-text">MAS DE 25 MIN</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="meta-li">
+                                                        <div class="meta-title">DIFICULTED</div>
+                                                        <div class="meta-text">NIVEL 2</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="meta-li">
+                                                        <div class="meta-title">RELIZADOS</div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="wr-buttons">
+                                            <a href="#">EMPEZAR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="favorite-icon">
+                                    <div class="lg-icon lg-heart-black"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <div class="wr-container">
+                                    <div class="wr-content">
+                                        <img src="img/play-1.png"/>
+                                        
+                                        <div class="inner-content">
+                                            <a href="#">2. ELIMINAR GRASA DE LA ESPALDA</a>
+                                            <ul>
+                                                <li>
+                                                    <div class="meta-li">
+                                                        <div class="meta-title">TIEMPO</div>
+                                                        <div class="meta-text">MAS DE 25 MIN</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="meta-li">
+                                                        <div class="meta-title">DIFICULTED</div>
+                                                        <div class="meta-text">NIVEL 2</div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="meta-li">
+                                                        <div class="meta-title">RELIZADOS</div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="wr-buttons">
+                                            <a href="#">EMPEZAR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="favorite-icon">
+                                    <div class="lg-icon lg-heart-black"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <div class="wr-container">
+                                    <div class="wr-content">
+                                        <img src="img/play-2.png"/>
+                                        
+                                        <div class="inner-content">
+                                            <a href="#">RETO TOTAL BODY MARZO 2019</a>
+                                            <ul class="special-list">
+                                                <li>
+                                                    Skipping
+                                                </li>
+                                                <li>
+                                                    Skipping
+                                                </li>
+                                                <li>
+                                                    Skipping
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="wr-buttons">
+                                            <a href="#">EMPEZAR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="favorite-icon">
+                                    <div class="lg-icon lg-heart-black"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                     <a href="#" id="entrenamiento" class="row-button" data-toggle="modal" data-target="#reliaze-modal2">
+                        <div class="btn-container">
+                            <div class="rbtn-text">CONFIGURA TU DIA</div>
+                            <div class="rbtn-icon">
+                               <div class="lg-icon lg-calendar-add"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ROW -->
+
+                <div class="wl-row">
+                    <div class="wr-header">
+                        <div class="wr-container">
+                            <div class="wr-title">
+                                <div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                                    <div class="card">
+                                        <div class="card-holder" role="tab" id="headingOne1">
+                                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse3" aria-expanded="true"
+                                            aria-controls="collapseOne1">
+                                                <h5 class="mb-0">
+                                                    ANOTACIONES 
+                                                    <i class="fas fa-angle-down rotate-icon"></i>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                    <div id="collapse3" class="collapse show mt-5" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                        <div class="wr-body">
+                            <div class="card-body">
+                                <section class="sub-navigation-wrapper action-bar">
+                                    <div class="container">
+                                        <div class="sub-navigation">
+                                            <div class="buttons visible-submenu col-12">
+                                                <div class="category-select-wrapper col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                    <div class="select-sp">
+                                                        <select class="category-select" name="sub-menu">
+                                                            <option value="" disabled="disabled" selected="sselected">SELECT ANOTACIONES</option>
+                                                            <option value="">DOLOR MUSCULAR</option>
+                                                            <option value="">1000 PASOS</option>
+                                                            <option value="">2 LITROS DE AGUA</option>
+                                                            <option value="">ANIMADO</option>
+                                                            <option value="">DECAIDO</option>
+                                                            <option value="">200 PASOS</option>
+                                                            <option value="">FLEXIBLE</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="buttons hidden-submenu col-xl-12 col-lg-12 col-md-12 col-sm-8 col-8">
+                                                <div class="action-menu-wrapper">
+                                                    <div class="ab-prev">
+                                                        <a href="#" class="ab-prev-btn">
+                                                            <div class="lg-icon lg-prev"></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="ab-next">
+                                                        <a href="#" class="ab-next-btn">
+                                                            <div class="lg-icon lg-next"></div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="owl-carousel owl-theme action-menu">
+                                                        <div class="item">
+                                                            <a href="#" class="ab-link">DOLOR MUSCULAR</a>
+                                                        </div>
+                                                        <div class="item">
+                                                            <a href="#" class="ab-link">1000 PASOS</a>
+                                                        </div>
+                                                        <div class="item">
+                                                            <a href="#" class="ab-link">2 LITROS DE AGUA</a>
+                                                        </div>
+                                                        <div class="item">
+                                                            <a href="#" class="ab-link">ANIMADO</a>
+                                                        </div>
+                                                        <div class="item">
+                                                            <a href="#" class="ab-link">DECAIDO</a>
+                                                        </div>
+                                                        <div class="item">
+                                                            <a href="#" class="ab-link">2000 PASOS</a>
+                                                        </div>
+                                                        <div class="item">
+                                                            <a href="#" class="ab-link">FLEXIBLE</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="wr-container">
+                                    <div class="inner-content">
+                                        <h6 class="text-muted">ANOTACION</h6>
+                                        <p class="text-muted">
+                                            This is Photoshop version of Lorem İpsum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <a href="#" id="anotaciones" class="row-button" data-toggle="modal" data-target="#reliaze-modal2">
+                        <div class="btn-container">
+                            <div class="rbtn-text">CONFIGURA TU DIA</div>
+                            <div class="rbtn-icon">
+                               <div class="lg-icon lg-calendar-add"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="#" class="row-button" data-toggle="modal" data-target="#reliaze-modal">
+                    <div class="btn-container">
+                        <div class="rbtn-text">ANADIR MAS EJERCICIOS</div>
+                        <div class="rbtn-icon">
+                            <div class="lg-icon lg-calendar-add"></div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="reliaze-modal" tabindex="-1" role="dialog" aria-labelledby="reliaze-modal" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reliaze-modal">CONFIGURA TU DIA</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="la la-remove"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="realize-form">
+                    <div class="rf-buttons">
+                        <a href="#">ANADIR SESION DE ENTRETAMIENTO</a>
+                        <a href="#">ANADIR RETO</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">GUARDAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="reliaze-modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">
+                    CONFIGURA
+                    <span>01 JULIO</span>
+                </h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row bg-light mb-4">
+                    <div class="middle-links col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center">
+                        <button id="button1" class="btn">ENTRENAMIENTO</button>
+                    </div>
+                    <div class="middle-links col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center">
+                        <button id="button2" class="btn">NUTRICION</button>
+                    </div>
+                    <div class="middle-links col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center">
+                        <button id="button3" class="btn">ANOTACIONES</button>
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="text-center">QUE QUIRES ANADIR?</p>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="last-container">
+                        <div class="holder col-xl-3 col-lg-2 col-md-12 col-sm-12"><a href="">CALENDAROI</a></div>
+                        <div class="holder col-xl-3 col-lg-2 col-md-12 col-sm-12"><a href="">RETO</a></div>
+                        <div class="holder col-xl-3 col-lg-2 col-md-12 col-sm-12"><a href="">VIDEO</a></div>
+                        <div class="holder col-xl-3 col-lg-2 col-md-12 col-sm-12"><a href="">PLAN</a></div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+
+        </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="reliaze-modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">
+                    CONFIGURA
+                    <span>01 JULIO</span>
+                </h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row bg-light mb-4">
+                    <div class="middle-links col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center">
+                        <button id="button1" class="btn">ENTRENAMIENTO</button>
+                    </div>
+                    <div class="middle-links col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center">
+                        <button id="button2" class="btn">NUTRICION</button>
+                    </div>
+                    <div class="middle-links col-xl-4 col-lg-4 col-md-4 col-sm-12 text-center">
+                        <button id="button3" class="btn">ANOTACIONES</button>
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="text-center">QUE QUIRES ANADIR?</p>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="last-container">
+                        <div class="holder col-xl-2 col-lg-2 col-md-12 col-sm-12"><a href="">DESAYUNO</a></div>
+                        <div class="holder col-xl-2 col-lg-2 col-md-12 col-sm-12"><a href="">COMIDA</a></div>
+                        <div class="holder col-xl-2 col-lg-2 col-md-12 col-sm-12"><a href="">ALMUERZO</a></div>
+                        <div class="holder col-xl-2 col-lg-2 col-md-12 col-sm-12"><a href="">MERIENDA</a></div>
+                        <div class="holder col-xl-2 col-lg-2 col-md-12 col-sm-12"><a href="">CENA</a></div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+
+        </div>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+
+<section class="mobile-navigation">
+    <div class="close-button">
+        <a href="#">
+            <span class="la la-arrow-left"></span>
+        </a>
+    </div>
+    <div class="inner-wrapper">
+
+        <div class="account-info-holder">
+            <div class="mobile-account-info">
+                <div class="mba-picture-holder">
+                    <a href="#" class="mba-picture">
+                        <!-- <img src="" alt=""> -->
+                        <span>S.A.</span>
+                    </a>
+                </div>
+                <div class="mba-info-holder">
+                    <div class="name">Sabri Ayeş</div>
+                    <div class="email">sabri@qode.com</div>
+                    <a href="#" class="logout"><span class="la la-sign-out"></span>Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-holder">
+            <div class="mobile-nav">
+                <div class="nav-element active-element">
+                    <a href="#"><span>NUTRICION</span></a>
+                </div>
+                <div class="nav-element">
+                    <a href="#"><span>WORKOUT</span></a>
+                </div>
+                <div class="nav-element">
+                    <a href="#"><span>AREA APRENDIZAJE</span></a>
+                </div>
+                <div class="nav-element">
+                    <a href="#"><span>COMUNIDAD</span></a>
+                </div>
+                <div class="nav-element last-element">
+                    <a href="#"><span>SHOP</span></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+@endsection
